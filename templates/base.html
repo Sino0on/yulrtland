@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}" />
+
+  <link rel="stylesheet" href="{% static 'assets/css/min/bootstrap.min.css' %}" media="all">
+  <link rel="stylesheet" href="{% static 'assets/css/jqueryui.css' %}" media="all">
+  <link rel="stylesheet" href="{% static 'vendor/animate-css/animate.css' %}" media="all">
+  <link rel="stylesheet" href="{% static 'assets/font/iconfont/iconstyle.css' %}" media="all">
+  <link rel="stylesheet" href="{% static 'assets/font/font-awesome/css/font-awesome.css' %}" media="all">
+  <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" media="all" id="maincss">
+</head>
+
+<body>
+
+  <div class="pre-loader">
+    <div class="loading-img"></div>
+  </div>
+
+  <header class="nav-menu fixed">
+    <nav class="navbar normal transparent">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'assets/img/logo.png' %}" alt="">
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div class="navbar-collapse collapse" id="main-navbar">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="{% url 'home' %}">Home</a>
+            </li>
+            <li>
+              <a href="{% url 'about-us' %}">About us</a>
+            </li>
+            <li>
+              <a href="{% url 'about-us' %}">Reviews</a>
+            </li>
+            <li class="dropdown">
+              <a href="{% url 'trips' %}">Best Tours</a>
+              <ul class="dropdown-menu">
+                {% for i in best_tours %}
+                <li><a href="{% url 'trip_detail' i.pk %}">{{ i.title }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="{% url 'news' %}" class="dropdown-toggle">Blog</a>
+              <ul class="dropdown-menu">
+                {% for i in categories %}
+                <li><a href="{% url 'news' %}?category={{ i.pk }}">{{ i.title }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li>
+              <a href="{% url 'about-us' %}">FAQ</a>
+            </li>
+            <li>
+              <a href="{% url 'about-us' %}">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+{% block content %}
+{% endblock %}
+
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7 col-md-3">
+          <h3>Mold Discover</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, quia, architecto? A, reiciendis eveniet! Esse est eaque adipisci natus rerum laudantium accusamus magni.</p>
+        </div>
+        <div class="col-sm-5 col-md-2">
+          <h3>Quick Link</h3>
+          <ul>
+            <li>Holiday Package</li>
+            <li>Summer Adventure</li>
+            <li>Bus and Trasnportation</li>
+            <li>Ticket and Hotel Booking</li>
+            <li>Trek and Hikings</li>
+          </ul>
+        </div>
+        <div class="col-sm-7 col-md-4">
+          <h3>Newsletter Signup</h3>
+          <p>Subscribe to our weekly newsletter to get news and update</p>
+          <br>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Your Email">
+            <div class="input-group-btn">
+              <button class="btn btn-primary">Subscribe</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5 col-md-2">
+          <h3>Contact Info</h3>
+          <ul>
+            <li>Mold Discover</li>
+            <li>info@moldthemes.com</li>
+          </ul>
+          <div class="clearfix">
+            <div class="social-icon-list">
+              <ul>
+                <li>
+                  <a href="https://twitter.com/moldthemes" class="icon-twitter"></a>
+                </li>
+                <li>
+                  <a href="mailto:info@moldthemes.com" class="icon-mail"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copy"><span>&copy;</span> Copyright Mold Discover, 2017</div>
+  </footer>
+
+  <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/jqueryui/jquery-ui-1.10.3.custom.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery.ui.touch-punch.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+  <script src="{% static 'vendor/waypoints/lib/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'vendor/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'vendor/retina.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery.imageScroll.min.js' %}"></script>
+  <script src="{% static 'assets/js/min/responsivetable.min.js' %}"></script>
+  <script src="{% static 'assets/js/bootstrap-tabcollapse.js' %}"></script>
+
+  <script src="{% static 'assets/js/min/countnumbers.min.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <!-- Current Page JS -->
+  {% block js %}
+
+  {% endblock %}
+</body>
+
+</html>

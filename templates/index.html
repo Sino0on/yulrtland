@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+{% block title %}
+Yurt Horizon
+{% endblock %}
+{% load static %}
+{% block content %}
+  <div class="main-video with-overlay stick-top" style="background-image: url('{% static 'assets/img/das.png' %}'); ">
+    <div class="main-image-txt center-txt">
+      <h1 class="main-header">Yurt Horizon</h1>
+      <hr>
+      <p class="sub-header">Wander Exotic places and never get lost.</p>
+      <a href="" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
+    </div>
+    <video autoplay="" muted="" loop="">
+      <source src="{% static 'assets/background_video.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="container">
+    <div class="search-bar bottom">
+      <div class="col-sm-2 text-wrap">
+        <h2 class="main-head">Find</h2>
+        <h5 class="sub-head">Tours</h5>
+      </div>
+      <div class="col-sm-8 row">
+        <div class="col-sm-4 form-group">
+          <label>From</label>
+          <input type="text" class="form-control datepicker" readonly>
+        </div>
+        <div class="col-sm-4 form-group">
+          <label>To</label>
+          <input type="text" class="form-control datepicker" readonly>
+        </div>
+        <div class="col-sm-4 form-group">
+          <label>Price</label>
+          <select class="form-control selectpicker">
+            <option value="">1000 - 2000</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-search btn-primary hvr-sweep-to-right">Search</button>
+      </div>
+    </div>
+  </div>
+
+    <section class="showcase" style="background: url('assets/img/worldmap.png') no-repeat center; background-size: cover">
+    <div class="main-title">
+      <h2>Our Top Destination</h2>
+      <p>Consectetur adipisicing elit. Quisquam fugit ducimus, qui molestias.</p>
+    </div>
+    <div class="container">
+
+      <div class="row item">
+        {% for i in destinations %}
+        <div class="col-sm-6 col-md-6">
+          <div class="item-grid">
+            <div class="item-img" style="background-image: url('{{ i.image.url }}');">
+              <div class="item-overlay">
+                <a href="{% url 'trip_detail' i.pk %}"><span class="icon-binocular"></span></a>
+              </div>
+            </div>
+            <div class="item-desc">
+              <div class="item-info">
+                {% if i.level == 'Easy' %}
+                <span class="icon-easy"></span>
+                {% elif i.level == 'Medium' %}
+                <span class="icon-medium"></span>
+                {% elif i.level == 'Hard' %}
+                <span class="icon-hard"></span>
+                {% else %}
+                <span class="icon-extreme"></span>
+                {% endif %}
+                <h4 class="title"><a href="">{{ i.title }}</a></h4>
+              </div>
+
+              <div class="sub-title">
+                <span class="location">{{ i.oblasti }}</span>
+                <span class="grade">{{ i.level }}</span>
+              </div>
+
+              <div class="item-detail">
+                <div class="left">
+                  <div class="day"><span class="icon-sun"></span>{{ i.days }}</div>
+                  <div class="night"><span class="icon-moon"></span>{{ i.nights }}</div>
+                </div>
+                <div class="right">
+                  <div class="price">{{ i.price }}</div>
+                  <a href="{% url 'trip_detail' i.pk %}" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    <div class="" style="text-align: center;">
+
+          <a href="{% url 'trips' %}" class="btn btn-lg btn-primary">More</a>
+        </div>
+    </div>
+  </section>
+
+
+  <section style="    padding-top: 0px;">
+    <div class="main-title">
+      <h2>Exprore Kyrgyzstan</h2>
+      <p>Kyrgyzstan is nestled between a few large mountain ranges, including Tien Shan and Pamir, and the mountains consist of 90% of the land. While places like Bishkek feel very metropolitan, a lot of the country still holds true to its Nomadic lifestyle, which is one of the main reasons Kyrgyzstan feels so special. With many people still living in the mountains, Kyrgyzstan is a place where you’ll be eager to discover the off the beaten track to fully immerse yourself into the Kyrgyz lifestyle, and this itinerary does just that!</p>
+    </div>
+
+    <div class="container">
+      <div class="row  feature-list center">
+
+        {% for i in infoblocks %}
+        <div class="col-sm-6 col-md-4">
+          <span class="square-icon"><span class="{{ i.icon }}"></span></span>
+          <div class="desc">
+            <h5>{{ i.title }}</h5>
+            <p>{{ i.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </section>
+
+<div class="flex-row bg-base">
+    <div class="flex-col-6 cover-bg-img" style="background-image: url('{% static 'assets/img/bg3.png' %}');"></div>
+    <div class="flex-col-6">
+      <div class="padding-100">
+        <div class="main-title left">
+          <h2>Explore World <br> Beyond</h2>
+          <p>Consectetur adipisicing elit. Quisquam fugit ducimus, qui molestias.</p>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">Esse iusto quibusdam quae assumenda dignissimos eligendi magni dolor error sunt corporis laborum maiores. At ad, ratione delectus inventore voluptas cum nulla molestias perferendis iste quis laborum veniam reprehenderit ipsam vitae, corrupti.
+            Cumque enim, unde eveniet.</div>
+          <div class="col-sm-6">Asperiores odit error cupiditate nam aperiam animi laborum aliquid. Doloremque, reiciendis perferendis praesentium necessitatibus quis cupiditate. Laborum dicta, ipsa aliquam fugiat!</div>
+        </div>
+        <br>
+        <a href="" class="btn btn-md btn-primary btn-line">Check All Destinations</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner base">
+    <div class="container">
+      <div class="line-box">
+        <div class="line-title">Lorem ipsum dolor sit</div>
+        <h2>Great Places, Great Holiday</h2>
+        <a href="" class="btn btn-primary btn-lg hvr-sweep-to-right">Book Now</a>
+      </div>
+    </div>
+  </div>
+<section>
+    <div class="main-title">
+      <h1>Our reviews</h1>
+      <p>Number of boxed can be defined through owl carousel.</p>
+    </div>
+    <div class="testimonial boxed" id="testimonial2">
+      {% for i in reviews %}
+      <div>
+        <img src="{{ i.image.url }}" alt="" class="avatar">
+        <div class="name">{{ i.full_name }}</div>
+        <div>{{ i.country }}</div>
+        <div class="rating">
+          {% for j in "12345" %}
+            {% if j|floatformat:0 <= i.reiting|floatformat:0 %}
+              <span class="icon-star"></span>
+            {% else %}
+              <span class="icon-star-empty"></span>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <p>{{ i.content }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+<div class="container">
+
+</div>
+<!--  <div class="counter-div base boxed">-->
+<!--    <div class="clearfix">-->
+<!--      <div class="col-sm-6 col-md-3 light">-->
+<!--        <span class="icon-font icon-tent"></span>-->
+<!--        <span class="counter">32</span>-->
+<!--        <p>Number of People Camped</p>-->
+<!--      </div>-->
+<!--      <div class="col-sm-6 col-md-3 dark">-->
+<!--        <span class="icon-font icon-camera"></span>-->
+<!--        <span class="counter">12437</span>-->
+<!--        <p>Pictures Taken this Year</p>-->
+<!--      </div>-->
+<!--      <div class="col-sm-6 col-md-3 light">-->
+<!--        <span class="icon-font icon-sun"></span>-->
+<!--        <span class="counter">35</span>-->
+<!--        <p>Average Temprature</p>-->
+<!--      </div>-->
+<!--      <div class="col-sm-6 col-md-3 dark">-->
+<!--        <span class="icon-font icon-umbrella"></span>-->
+<!--        <span class="counter">45</span>-->
+<!--        <p>Rainfall Last Year</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+
+<!--  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37319.30096857599!2d-111.50394094053527!3d44.81298564157587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5351e55555555555%3A0xaca8f930348fe1bb!2sYellowstone+National+Park!5e0!3m2!1sen!2snp!4v1493435077252"-->
+<!--  style="width: 100%; border:0" height="450" allowfullscreen></iframe>-->
+{% endblock %}
+{% block js %}
+<script src="{% static 'assets/js/min/index.min.js' %}"></script>
+<script src="{% static 'assets/js/min/home.min.js' %}"></script>
+{% endblock %}

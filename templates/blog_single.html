@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block title %}
+Yurtland
+{% endblock %}
+{% load static %}
+{% block content %}
+  <div class="post-single center">
+    <div class="page-img" style="background-image: url('{{ news.image.url }}');">
+      <div class="page-img-txt container">
+        <div class="row">
+          <div class="col-sm-2">
+          </div>
+          <div class="col-sm-8">
+            <h1 class="main-head">{{ news.title }}</h1>
+            <p class="sub-head">{{ news.mini_description }}</p>
+<!--            <div class="author-img">-->
+<!--              <img src="{{ news.image.url }}" alt="">-->
+<!--            </div>-->
+            <div class="author">
+              <span>By</span>  <a href="#">{{ news.author }}</a>
+            </div>
+            <p class="byline">
+              <span>{{ news.created_at }}</span>
+              <span class="dot">·</span>
+              <span class="italic">in</span>
+              <a href="{% url 'news' %}?category={{ news.category.pk }}">{{ news.category }}</a>, <a href="#">Asia</a>
+              <span class="dot">·</span>
+              <a href="#">4 Comments</a>
+            </p>
+          </div>
+          <div class="col-sm-2">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="white">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8">
+            <div class="post">
+              {{ news.description|safe }}
+            </div>
+            <div class="tag-wrap">
+              <a href="#" rel="tag">blog</a>
+              <a href="#" rel="tag">more</a>
+              <a href="#" rel="tag">one</a>
+              <a href="#" rel="tag">read</a>	
+            </div>
+
+            <div class="share-box">
+              <h5 class="title">Share this entry</h5>
+              <div class="social-icon-wrap">
+                <a href="#" class="social-icon"><span class="fa fa-facebook"></span></a>
+                <a href="#" class="social-icon"><span class="fa fa-google"></span></a>
+                <a href="#" class="social-icon"><span class="fa fa-twitter"></span></a>
+                <a href="#" class="social-icon"><span class="fa fa-linkedin"></span></a>
+              </div>
+            </div>
+            <div class="review-comment">
+              <div class="section-title left">
+                <h4>Reviews &amp; Comments</h4>
+              </div>
+              <ul class="media-list review-comment">
+                <li>
+                  <div class="media">
+                    <div class="media-left">
+                      <a href="#">
+                        <img src="http://placehold.it/70x70" class="media-object" alt="">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">Kim L. Burney</h4> 
+                      <div class="rating">
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star-empty"></span>
+                      </div>
+                      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media">
+                    <div class="media-left">
+                      <a href="#">
+                        <img src="http://placehold.it/70x70" class="media-object" alt="">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">Shing Ch'in</h4> 
+                      <div class="rating">
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star-empty"></span>
+                      </div>
+                      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</div>
+                  </div>
+                </li>
+              </ul>
+              <div class="add-comment">
+                <div class="form-group">
+                  <label>Add Comment</label>
+                  <textarea class="form-control">Your comment</textarea>
+                  <button class="btn btn-primary">Add Comment</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}
+{% block js %}
+  <script src="{% static 'assets/js/min/countnumbers.min.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+{% endblock %}

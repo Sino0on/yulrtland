@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+{% block title %}
+Yurt Horizon
+{% endblock %}
+{% load static %}
+{% block content %}
+  <div class="page-img" style="background-image: url('{{ about.image_trip.url }}');">
+    <div class="container">
+      <div class="col-sm-8">
+        <h1 class="main-head">Trip List</h1>
+        <h5 class="sub-head">Two Column Grid Listing with Sidebar</h5>
+      </div>
+      <div class="col-sm-4">
+        <ul class="breadcrumb">
+          <li><a href=""><span class="icon-home"></span></a>
+          </li>
+          <li><a href="">List</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+
+          <div class="sidebar">
+            <div class="border-box">
+              <div class="box-title">Tour Search</div>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search Site">
+                <div class="input-group-btn">
+                  <button class="btn btn-primary">Search</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-box">
+              <div class="box-title">Choose Country</div>
+              <select class="form-control selectpicker">
+                <option value="">Choose</option>
+              </select>
+            </div>
+
+            <div class="border-box">
+              <div class="box-title">Difficulty</div>
+              <div>
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-default active" data-toggle="tooltip" data-placement="bottom" title="Easy">
+                    <input type="radio" name="options" id="option1" checked>
+                    <span class="icon-easy"></span>
+                  </label>
+                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Easy">
+                    <input type="radio" name="options" id="option2">
+                    <span class="icon-medium"></span>
+                  </label>
+                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Difficult">
+                    <input type="radio" name="options" id="option3">
+                    <span class="icon-difficult"></span>
+                  </label>
+                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Hard">
+                    <input type="radio" name="options" id="option4">
+                    <span class="icon-hard"></span>
+                  </label>
+                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Extreme">
+                    <input type="radio" name="options" id="option5">
+                    <span class="icon-extreme"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-box">
+              <div class="box-title">Price Range</div>
+              <div class="price-widget">
+                <div id="price-slider"></div>
+                <div id="amount-min" class="pull-left"></div>
+                <div id="amount-max" class="pull-right"></div>
+              </div>
+            </div>
+
+            <div class="border-box">
+              <div class="box-title">Category</div>
+              <ul class="checklist">
+                <li>
+                  <input type="checkbox">All Style</li>
+                <li>
+                  <input type="checkbox">Trekking</li>
+                <li>
+                  <input type="checkbox">Hiking &amp; Sightseeing</li>
+                <li>
+                  <input type="checkbox">Relaxation</li>
+                <li>
+                  <input type="checkbox">Adventure</li>
+              </ul>
+            </div>
+
+            <div class="border-box">
+              <div class="box-title">Duration</div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Days</label>
+                    <select class="form-control selectpicker">
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Nights</label>
+                    <select class="form-control selectpicker">
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+        </div>
+
+        <div class="col-sm-8">
+          <div class="sort-wrap">
+            <div class="sort-title">20 Matching Result</div>
+            <div class="toogle-view">
+              <a href="trip_list.html" class="icon icon-list"></a>
+              <a href="trip_grid_withsidebar.html" class="icon icon-grid active"></a>
+            </div>
+          </div>
+          <div class="row item">
+            {% for i in trips %}
+            <div class="col-sm-12 col-md-6">
+              <div class="item-grid">
+                <div class="item-img" style="background-image: url('{{ i.image.url }}');">
+                  <div class="item-overlay">
+                    <a href="{% url 'trip_detail' i.pk %}"><span class="icon-binocular"></span></a>
+                  </div>
+                </div>
+                <div class="item-desc">
+                  <div class="item-info">
+                    {% if i.level == 'Easy' %}
+                    <span class="icon-easy"></span>
+                    {% elif i.level == 'Medium' %}
+                    <span class="icon-medium"></span>
+                    {% elif i.level == 'Hard' %}
+                    <span class="icon-hard"></span>
+                    {% else %}
+                    <span class="icon-extreme"></span>
+                    {% endif %}
+                    <h4 class="title"><a href="">{{ i.title }}</a></h4>
+                  </div>
+
+                  <div class="sub-title">
+                    <span class="location">{{ i.oblasti }}</span>
+                    <span class="grade">{{ i.level }}</span>
+                  </div>
+
+                  <div class="item-detail">
+                    <div class="left">
+                      <div class="day"><span class="icon-sun"></span>{{ i.days }}</div>
+                      <div class="night"><span class="icon-moon"></span>{{ i.nights }}</div>
+                    </div>
+                    <div class="right">
+                      <div class="price">{{ i.price }}</div>
+                      <a href="{% url 'trip_detail' i.pk %}" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+          </div>
+          <div class="pagination-wrap">
+            <span class="total">Total {{ page_obj.paginator.count }}</span>
+            <nav class="pull-right">
+              <ul class="pagination">
+
+                {% if page_obj.has_previous %}
+                  <li class="page-item">
+                    <a class="page-link" href="?page=1" aria-label="First">First</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">‹</a>
+                  </li>
+                {% else %}
+                  <li class="page-item disabled"><span class="page-link">First</span></li>
+                  <li class="page-item disabled"><span class="page-link">‹</span></li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                  {% if num == page_obj.number %}
+                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                  {% elif num >= page_obj.number|add:'-2' and num <= page_obj.number|add:'2' %}
+                    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                  {% elif num == 1 or num == page_obj.paginator.num_pages %}
+                    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                  {% elif num == page_obj.number|add:'-3' or num == page_obj.number|add:'3' %}
+                    <li class="page-item"><span class="page-link">..</span></li>
+                  {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">›</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">Last</a>
+                  </li>
+                {% else %}
+                  <li class="page-item disabled"><span class="page-link">›</span></li>
+                  <li class="page-item disabled"><span class="page-link">Last</span></li>
+                {% endif %}
+
+              </ul>
+            </nav>
+            <div class="clearfix"></div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+{% block js %}
+<script src="{% static 'assets/js/min/priceslider.min.js' %}"></script>
+{% endblock %}

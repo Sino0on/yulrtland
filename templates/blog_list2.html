@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% block title %}
+Yurtland
+{% endblock %}
+{% load static %}
+{% block content %}
+  <div class="page-img" style="background-image: url('{{ about.image_about.url }}');">
+    <div class="page-img-txt container">
+      <div class="row">
+        <div class="col-sm-8">
+          <h1 class="main-head">Blog List</h1>	
+          <p class="sub-head">Blog Listing with Full Image</p>
+        </div>
+        <div class="colsm-4">
+          <ul class="breadcrumb">
+            <li><a href="#"><span class="icon-home"></span></a>
+            </li>
+            <li><a href="#">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          {% for i in news %}
+          <article class="post-list full-img">
+            <div class="post-img" style="background-image: url('{{ i.image.url }}')">
+              <div class="item-overlay">
+                <a href="#"><span class="icon-binocular"></span></a>
+              </div>
+            </div>
+            <div class="post-summary">
+              <header>
+                <h4 class="post-title">
+
+									<a href="{% url 'news_detail' i.pk %}">{{ i.title }}</a>
+
+								</h4>
+                <p class="byline author vcard">
+                  <span class="italic">By</span>&nbsp;
+                  <a href="#" rel="author">{{ i.author }}</a>
+                  <span class="dot">·</span>
+                  <span class="updated">{{ i.created_at }}</span>
+                  <span class="dot">·</span>
+                  <span class="comments"><i class="fa fa-comment"></i>
+
+										<a href="#">1 Comment</a> 
+
+									</span>
+                </p>
+              </header>
+              <div class="post-excerpt">
+                {{ i.mini_description }}
+              </div>
+
+              <a href="{% url 'news_detail' i.pk %}" class="btn btn-primary hvr-sweep-to-right">Read More</a>
+            </div>
+          </article>
+          {% endfor %}
+          <div class="pagination-wrap">
+            <span class="total">Total {{ page_obj.paginator.count }}</span>
+            <nav class="pull-right">
+              <ul class="pagination">
+
+                {% if page_obj.has_previous %}
+                  <li class="page-item">
+                    <a class="page-link" href="?page=1" aria-label="First">First</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">‹</a>
+                  </li>
+                {% else %}
+                  <li class="page-item disabled"><span class="page-link">First</span></li>
+                  <li class="page-item disabled"><span class="page-link">‹</span></li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                  {% if num == page_obj.number %}
+                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                  {% elif num >= page_obj.number|add:'-2' and num <= page_obj.number|add:'2' %}
+                    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                  {% elif num == 1 or num == page_obj.paginator.num_pages %}
+                    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                  {% elif num == page_obj.number|add:'-3' or num == page_obj.number|add:'3' %}
+                    <li class="page-item"><span class="page-link">..</span></li>
+                  {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">›</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">Last</a>
+                  </li>
+                {% else %}
+                  <li class="page-item disabled"><span class="page-link">›</span></li>
+                  <li class="page-item disabled"><span class="page-link">Last</span></li>
+                {% endif %}
+
+              </ul>
+            </nav>
+            <div class="clearfix"></div>
+          </div>
+
+
+
+        </div>
+        <div class="col-sm-4">
+          <div class="sidebar">
+            <div class="border-box">
+              <div class="box-title">Search Trips</div>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search Site">
+                <div class="input-group-btn">
+                  <button class="btn btn-primary">Search</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-box">
+              <div class="box-title">Recent Blog Post</div>
+              <div class="recent-post-list">
+                {% for i in last_news %}
+                <div class="recent-post">
+                  <div class="author-img">
+                    <img src="{{ i.image.url }}" class="media-object" alt="">
+                  </div>
+                  <div class="post-summary">
+                    <p>{{ i.title }}</p>
+                    <div class="byline">
+                      <span class="updated">{{ i.created_at }}</span>
+                      <span class="dot">·</span>
+                      <span class="italic">By</span>&nbsp;
+                      <a href="{% url 'news_detail' i.pk %}" rel="author" class="fn">{{ i.author }}</a>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+
+
+            <div class="border-box">
+              <div class="box-title">Categories</div>
+              <ul class="list">
+                {% for i in categories %}
+                <li class="cat-item"><a href="?category={{i.pk}}">{{ i.title }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="border-box">
+              <div class="box-title">Tags</div>
+              <div class="tagcloud">
+                {% for i in tags %}
+                <a href="?tag={{ i.pk }}" class="tag-link" title="2 topics">{{ i.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+{% block js %}
+  <script src="{% static 'assets/js/min/countnumbers.min.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+{% endblock %}
