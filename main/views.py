@@ -17,6 +17,7 @@ class HomeView(generic.TemplateView):
         context['destinations'] = Destination.objects.all()[:4]
         context['best_tours'] = Destination.objects.all()[:5]
         context['reviews'] = Review.objects.all()
+        context['infoblocks'] = BlockInfo.objects.all()
         return context
 
 
@@ -99,6 +100,18 @@ class ReviewsView(generic.TemplateView):
 
 class FAQView(generic.TemplateView):
     template_name = 'faq.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['about'] = SiteSetting.objects.all().first()
+        context['destinations'] = Destination.objects.all()[:4]
+        context['best_tours'] = Destination.objects.all()[:5]
+        context['reviews'] = Review.objects.all()
+        return context
+
+
+class ContactUsView(generic.TemplateView):
+    template_name = 'contact.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

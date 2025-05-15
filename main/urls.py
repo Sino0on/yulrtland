@@ -11,4 +11,5 @@ urlpatterns = [
     path('news/<int:pk>', NewsDetailView.as_view(), name='news_detail'),
     path('reviews', ReviewsView.as_view(), name='reviews'),
     path('faq', FAQView.as_view(), name='faq'),
+    path('contact', ContactUsView.as_view(), name='contact'),
 ]
