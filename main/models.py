@@ -192,6 +192,7 @@ class SiteSetting(SingletonModel):
     image_about = models.FileField(upload_to='images')
     image_blog = models.FileField(upload_to='images')
     image_trip = models.FileField(upload_to='images')
+    image_review = models.FileField(upload_to='images')
     address_map = models.TextField( verbose_name="Адрес на карте", default='''
     <a class="dg-widget-link" href="http://2gis.kg/bishkek/firm/70000001021088130/center/74.587426,42.845011/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Бишкека</a><div class="dg-widget-link"><a href="http://2gis.kg/bishkek/firm/70000001021088130/photos/70000001021088130/center/74.587426,42.845011/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a></div><div class="dg-widget-link"><a href="http://2gis.kg/bishkek/center/74.587426,42.845011/zoom/16/routeTab/rsType/bus/to/74.587426,42.845011╎Кыргызский Государственный Технический Университет им. И. Раззакова, ректорат?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Кыргызский Государственный Технический Университет им. И. Раззакова, ректорат</a></div><script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":640,"height":600,"borderColor":"#a3a3a3","pos":{"lat":42.845011,"lon":74.587426,"zoom":16},"opt":{"city":"bishkek"},"org":[{"id":"70000001021088130"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
     ''')
@@ -201,3 +202,13 @@ class SiteSetting(SingletonModel):
         verbose_name_plural = 'Настройки сайта'
 
 
+class Faq(models.Model):
+    question = models.CharField(max_length=255)
+    answer = RichTextField()
+    created_at = models.DateTimeField()
+
+    def __str__(self):
+        return f'{self.question}'
+
+    class Meta:
+        ordering = ['-created_at']

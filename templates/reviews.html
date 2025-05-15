@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}
+Yurtland
+{% endblock %}
+{% load static %}
+{% block content %}
+  <div class="page-img" style="background-image: url('{{ about.image_review.url }}');">
+    <div class="page-img-txt container">
+      <div class="row">
+        <div class="col-sm-8">
+          <h1 class="main-head">Blog List</h1>	
+          <p class="sub-head">Blog Listing with Full Image</p>
+        </div>
+        <div class="colsm-4">
+          <ul class="breadcrumb">
+            <li><a href="#"><span class="icon-home"></span></a>
+            </li>
+            <li><a href="#">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <section>
+    <div class="container">
+      <div class="main-title">
+        <h1>Testimonials Static</h1>
+        <p>Static, No carousel used.</p>
+      </div>
+      <div class="row">
+        {% for i in reviews %}
+        <div class="col-sm-6">
+          <div class="testimonial-option">
+            <div class="tes-text">{{ i.content }}</div>
+            <div class="tes-profile">
+              <img src="{{ i.image.url }}" alt="" class="avatar">
+              <div class="tes-profile-text">
+                <div class="name">{{ i.full_name }}</div>
+                <div class="location">{{ i.country }}</div>
+                <div class="rating">
+                  {% for j in "12345" %}
+                    {% if j|floatformat:0 <= i.reiting|floatformat:0 %}
+                      <span class="icon-star"></span>
+                    {% else %}
+                      <span class="icon-star-empty"></span>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+  </div></section>
+  </main>
+{% endblock %}
+{% block js %}
+  <script src="{% static 'assets/js/min/countnumbers.min.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+{% endblock %}

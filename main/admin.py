@@ -26,6 +26,7 @@ admin.site.register(Tag)
 admin.site.register(News)
 admin.site.register(SiteSetting)
 admin.site.register(Review)
+admin.site.register(Faq)
 
 
 # @admin.register(News)
