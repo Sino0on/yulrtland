@@ -20,4 +20,4 @@ RUN mkdir -p /app/media
 EXPOSE 8000
 
 # Запускаем команду для миграции и запуска сервера
-CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8004"]
