@@ -1,32 +1,23 @@
-FROM python:3.11
+# Устанавливаем базовый образ Python
+FROM python:3.9-slim
 
-RUN apt-get update
-
-RUN pip install --upgrade pip
-
-# Configure Poetry
-ENV POETRY_VERSION=1.8.3
-ENV POETRY_HOME=/opt/poetry
-ENV POETRY_VENV=/opt/poetry-venv
-ENV POETRY_CACHE_DIR=/opt/.cache
-
-# Install poetry separated from system interpreter
-RUN python3 -m venv $POETRY_VENV \
-	&& $POETRY_VENV/bin/pip install -U pip setuptools \
-	&& $POETRY_VENV/bin/pip install poetry==${POETRY_VERSION}
-
-# Add `poetry` to PATH
-ENV PATH="${PATH}:${POETRY_VENV}/bin"
-
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Install dependencies
-COPY poetry.lock pyproject.toml ./
-RUN ls -la /app && cat /app/pyproject.toml
+# Копируем requirements.txt в рабочую директорию
+COPY requirements.txt /app/
 
-RUN poetry install
+# Устанавливаем зависимости
+RUN pip install -r requirements.txt
 
-# Run your app
-COPY . .
+# Копируем исходный код проекта в рабочую директорию
+COPY . /app/
 
-CMD sh -c "poetry run python manage.py makemigrations && poetry run python manage.py migrate && poetry run python manage.py runserver 0.0.0.0:8000"
+# Создаем директорию для хранения медиа файлов
+RUN mkdir -p /app/media
+
+# Открываем порт для приложения
+EXPOSE 8000
+
+# Запускаем команду для миграции и запуска сервера
+CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
