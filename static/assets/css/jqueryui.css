@@ -98,7 +98,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #558B2F;
+  background-color: #e84130;
   border-color: #497829;
 }
 .btn-primary:hover,
@@ -108,7 +108,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #3e6522;
+  background-color: #e84130;
   border-color: #2d4a19;
 }
 .btn-primary:active,
@@ -134,11 +134,11 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #558B2F;
+  background-color: #e84130;
   border-color: #497829;
 }
 .btn-primary .badge {
-  color: #558B2F;
+  color: #e84130;
   background-color: #fff;
 }
 .btn-success {
@@ -322,7 +322,7 @@ fieldset[disabled] .btn-danger.active {
   background-color: #fff;
 }
 .btn-link {
-  color: #558B2F;
+  color: #e84130;
   font-weight: normal;
   border-radius: 0;
 }
@@ -1548,7 +1548,7 @@ fieldset[disabled] .ui-button.active {
 }
 .ui-button-primary {
   color: #fff;
-  background-color: #558B2F;
+  background-color: #e84130;
   border-color: #497829;
 }
 .ui-button-primary:hover,
@@ -1558,7 +1558,7 @@ fieldset[disabled] .ui-button.active {
 .ui-button-primary.active,
 .open > .dropdown-toggle.ui-button-primary {
   color: #fff;
-  background-color: #3e6522;
+  background-color: #e84130;
   border-color: #2d4a19;
 }
 .ui-button-primary:active,
@@ -1584,11 +1584,11 @@ fieldset[disabled] .ui-button-primary:active,
 .ui-button-primary.disabled.active,
 .ui-button-primary[disabled].active,
 fieldset[disabled] .ui-button-primary.active {
-  background-color: #558B2F;
+  background-color: #e84130;
   border-color: #497829;
 }
 .ui-button-primary .badge {
-  color: #558B2F;
+  color: #e84130;
   background-color: #fff;
 }
 .ui-button-warning {
@@ -2035,8 +2035,8 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-menu .ui-menu-item a.ui-state-active,
 .ui-menu .ui-menu-item a.ui-widget-content {
-  background-color: #558B2F;
-  border-color: #558B2F;
+  background-color: #e84130;
+  border-color: #e84130;
   color: #fff;
 }
 .ui-menu .ui-menu-item a.ui-state-focus {
@@ -2265,7 +2265,7 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-dialog-buttonpane .ui-dialog-buttonset .ui-button {
   color: #ffffff;
-  background-color: #558B2F;
+  background-color: #e84130;
   border-color: #477427;
 }
 .ui-dialog-buttonpane .ui-dialog-buttonset .ui-button.ui-state-hover {
@@ -2382,7 +2382,7 @@ button.ui-button::-moz-focus-inner {
   border: 0;
   background-position: 0 0;
   color: #fff;
-  background: #558B2F;
+  background: #e84130;
   -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-box-sizing: border-box;
@@ -2516,7 +2516,7 @@ button.ui-button::-moz-focus-inner {
 .ui-tabs .ui-tabs-nav li a:hover {
   border: 1px solid whiteSmoke;
   border-bottom: 1px solid #ddd;
-  background-color: #558B2F;
+  background-color: #e84130;
   color: #ffffff;
 }
 .ui-tabs .ui-tabs-nav li.ui-tabs-active a {
@@ -2988,7 +2988,7 @@ button.ui-button::-moz-focus-inner {
   color: #888;
 }
 .ui-datepicker-today a {
-  background-color: #558B2F;
+  background-color: #e84130;
   cursor: pointer;
   padding: 0 4px;
   margin-bottom: 0px;
@@ -3063,7 +3063,7 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-datepicker td .ui-state-hover {
   color: #fff;
-  background: #558B2F;
+  background: #e84130;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   border-color: #357ebd;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
@@ -3086,7 +3086,7 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-datepicker .ui-datepicker-header {
   background: transparent;
-  border-bottom: 2px solid #558B2F;
+  border-bottom: 2px solid #e84130;
   color: #4b4b4b;
   padding: 2px 0;
   margin-bottom: 8px;
@@ -3103,8 +3103,8 @@ button.ui-button::-moz-focus-inner {
 .ui-dialog .ui-dialog-buttonset button,
 .ui-dialog .ui-dialog-buttonset input[type="button"],
 .ui-dialog .ui-dialog-buttonset input[type="submit"] {
-  background: #558B2F;
-  border: 1px solid #558B2F;
+  background: #e84130;
+  border: 1px solid #e84130;
   color: #fff;
   height: 30px;
   line-height: 30px;

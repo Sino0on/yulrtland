@@ -3,16 +3,20 @@
 Yurt Horizon
 {% endblock %}
 {% load static %}
+{% block index %}
+transparent
+{% endblock %}
 {% block content %}
+
   <div class="main-video with-overlay stick-top" style="background-image: url('{% static 'assets/img/das.png' %}'); ">
     <div class="main-image-txt center-txt">
       <h1 class="main-header">Yurt Horizon</h1>
       <hr>
       <p class="sub-header">Wander Exotic places and never get lost.</p>
-      <a href="" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
+      <a href="" style="    background: #e84130;" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
     </div>
     <video autoplay="" muted="" loop="">
-      <source src="{% static 'assets/background_video.mp4' %}" type="video/mp4">
+      <source src="{% static 'assets/back.MOV' %}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
   </div>
