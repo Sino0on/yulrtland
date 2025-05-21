@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load i18n %}
 <html lang="en">
 
 <head>
@@ -10,7 +11,28 @@
   <meta name="author" content="">
   <title>{% block title %}{% endblock %}</title>
   <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}" />
+  {% block css %}
+  {% endblock %}
+  <style>
+		.float{
+			position:fixed;
+			width:60px;
+			height:60px;
+			bottom:40px;
+			right:40px;
+			background-color:#25d366;
+			color:#FFF;
+			border-radius:50px;
+			text-align:center;
+		  font-size:30px;
+			box-shadow: 2px 2px 3px #999;
+		  z-index:100;
+		}
 
+		.my-float{
+			margin-top:16px;
+		}
+	</style>
   <link rel="stylesheet" href="{% static 'assets/css/min/bootstrap.min.css' %}" media="all">
   <link rel="stylesheet" href="{% static 'assets/css/jqueryui.css' %}" media="all">
   <link rel="stylesheet" href="{% static 'vendor/animate-css/animate.css' %}" media="all">
@@ -30,7 +52,7 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="{% static 'assets/img/logo.png' %}" style="width: 220px" alt="">
+            <img src="{% static 'assets/img/logo.png' %}" style="" alt="">
           </a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -75,11 +97,46 @@
             <li>
               <a href="{% url 'contact' %}">Contact us</a>
             </li>
+            {% load i18n %}
+
+            <li class="dropdown">
+              {% get_current_language as LANGUAGE_CODE %}
+              <a href="#">{{ LANGUAGE_CODE|upper }}</a>
+              <ul class="dropdown-menu">
+
+                <li>
+                  <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.get_full_path|cut:'/de' }}">
+                    <input type="hidden" name="language" value="en">
+                    <button type="submit" style="border: none; background: none; padding: 5px 20px; text-align: left;">
+                      {% trans 'English' %}
+                    </button>
+                  </form>
+                </li>
+
+                <li>
+                  <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.path }}">
+                    <input type="hidden" name="language" value="de">
+                    <button type="submit" style="border: none; background: none; padding: 5px 20px; text-align: left;">
+                      {% trans 'German' %}
+                    </button>
+                  </form>
+                </li>
+
+              </ul>
+            </li>
+
           </ul>
         </div>
       </div>
     </nav>
   </header>
+  <a href="https://api.whatsapp.com/send?phone=+996222222011&text=Hello azat bayke" class="float" target="_blank">
+	<i class="fa fa-whatsapp my-float"></i>
+	</a>
 {% block content %}
 {% endblock %}
 
@@ -104,13 +161,26 @@
           <h3>Newsletter Signup</h3>
           <p>Subscribe to our weekly newsletter to get news and update</p>
           <br>
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Your Email">
-            <div class="input-group-btn">
-              <button class="btn btn-primary">Subscribe</button>
+
+          <form method="post" action="{% url 'subscribe_newsletter' %}">
+            {% csrf_token %}
+            <div class="input-group">
+              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+              <div class="input-group-btn">
+                <button class="btn btn-primary">Subscribe</button>
+              </div>
             </div>
-          </div>
+          </form>
+
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-success" style="margin-top: 10px;">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
         </div>
+
         <div class="col-sm-5 col-md-2">
           <h3>Contact Info</h3>
           <ul>

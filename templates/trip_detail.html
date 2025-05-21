@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block title %}
 Yurtland
 {% endblock %}
 {% load static %}
 {% block content %}
   <div class="carousel slide carousel-fade with-overlay full-height stick-top" id="carousel" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel" data-slide-to="1"></li>
-    </ol>
+
 
     <div class="carousel-inner" role="listbox">
       <div class="item active" style="background-image: url('{{ trip.image.url }}');">
@@ -88,12 +86,7 @@ Yurtland
         <div class="price">{{ trip.price }}</div>
         <button class="btn btn-primary btn-lg hvr-sweep-to-right" data-toggle="modal" data-target="#myModal">Book Now</button>
       </div>
-      <ul class="social-icon">
-        <li><span class="icon-facebook"></span> Share</li>
-        <li><span class="icon-twitter"></span> Tweet</li>
-        <li><span class="icon-google"></span> Google +1</li>
-        <li><span class="icon-pinterest"></span> Pin it</li>
-      </ul>
+      
     </div>
   </div>
 
@@ -395,11 +388,10 @@ Yurtland
       <br>
       <br>
       <div class="section-title center">
-        <h3>Find Map</h3>
+        <h3>Our Adventure Map</h3>
       </div>
-      <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37319.30096857599!2d-111.50394094053527!3d44.81298564157587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5351e55555555555%3A0xaca8f930348fe1bb!2sYellowstone+National+Park!5e0!3m2!1sen!2snp!4v1493435077252"
-        style="width: 100%; border:0" height="450" allowfullscreen></iframe>
+      <div class="map" style="width: 100%; border:0" height="450">
+        <img style="width: 100%; border:0"  src="{{ trip.map.url }}" alt="">
       </div>
 
     </div>
@@ -461,45 +453,54 @@ Yurtland
         <div class="modal-body">
 
           <div class="preview-wrap">
-            <div class="preview-img" style="background-image: url('assets/img/home_img/mountain.jpg')"></div>
+            <div class="preview-img" style="background-image: url('{{ trip.image.url }}')"></div>
 
             <div class="form-wrap">
-              <form id="ajax-book" method="post" action="book_trip.php">
-                <div id="form-messages" class="alert" role="alert" style="display: none;"></div>
-                <input type="hidden" name="trip" id="trip" value="annapurna">
+              <form method="post" action="">
+                {% csrf_token %}
+                {% if messages %}
+                  {% for message in messages %}
+                    <div class="alert alert-success">{{ message }}</div>
+                  {% endfor %}
+                {% endif %}
+
+                <input type="hidden" name="trip" value="{{ trip.id }}">
+
                 <div class="form-group">
                   <label>Name</label>
-                  <input type="text" name="name" id="name" class="form-control" placeholder="Enter Your Name" value="" required>
+                  <input type="text" name="name" class="form-control" placeholder="Enter Your Name" required>
                 </div>
+
                 <div class="form-group">
                   <label>Email</label>
-                  <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" value="" required>
+                  <input type="email" name="email" class="form-control" placeholder="Email Address" required>
                 </div>
 
                 <div class="form-group">
                   <label>Phone</label>
-                  <input type="number" name="phone" id="phone" class="form-control" placeholder="Phone Number" value="" required>
+                  <input type="text" name="phone" class="form-control" placeholder="Phone Number" required>
                 </div>
 
                 <div class="form-group">
                   <label>Duration</label>
                   <div class="row">
                     <div class="col-sm-6">
-                      <input type="text" name="from_date" id="from_date" class="form-control datepicker" placeholder="From" value="" required>
+                      <input type="date" name="from_date" class="form-control" placeholder="From" required>
                     </div>
                     <div class="col-sm-6">
-                      <input type="text" name="to_date" id="to_date" class="form-control datepicker" placeholder="To" value="" required>
+                      <input type="date" name="to_date" class="form-control" placeholder="To" required>
                     </div>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label>Number of Person</label>
-                  <input type="text" name="number_person" id="number_person" class="form-control" value="2" required>
+                  <label>Number of Persons</label>
+                  <input type="number" name="number_person" class="form-control" value="1" required>
                 </div>
-                <button class="btn btn-primary hvr-sweep-to-right">BooK Now</button>
 
+                <button type="submit" class="btn btn-primary hvr-sweep-to-right">Book Now</button>
               </form>
+
             </div>
           </div>
         </div>

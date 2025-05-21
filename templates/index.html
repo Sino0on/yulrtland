@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block title %}
 Yurt Horizon
 {% endblock %}
@@ -13,7 +14,7 @@ transparent
       <h1 class="main-header">Yurt Horizon</h1>
       <hr>
       <p class="sub-header">Wander Exotic places and never get lost.</p>
-      <a href="" style="    background: #e84130;" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
+      <a href="{% url 'trips' %}" style="    background: #e84130;" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
     </div>
     <video autoplay="" muted="" loop="">
       <source src="{% static 'assets/back.MOV' %}" type="video/mp4">
@@ -22,34 +23,51 @@ transparent
   </div>
 
   <div class="container">
-    <div class="search-bar bottom">
-      <div class="col-sm-2 text-wrap">
-        <h2 class="main-head">Find</h2>
-        <h5 class="sub-head">Tours</h5>
-      </div>
-      <div class="col-sm-8 row">
-        <div class="col-sm-4 form-group">
-          <label>From</label>
-          <input type="text" class="form-control datepicker" readonly>
-        </div>
-        <div class="col-sm-4 form-group">
-          <label>To</label>
-          <input type="text" class="form-control datepicker" readonly>
-        </div>
-        <div class="col-sm-4 form-group">
-          <label>Price</label>
-          <select class="form-control selectpicker">
-            <option value="">1000 - 2000</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <button class="btn btn-search btn-primary hvr-sweep-to-right">Search</button>
+  <div class="search-bar bottom">
+    <div class="col-sm-2 text-wrap">
+      <h2 class="main-head">Find</h2>
+      <h5 class="sub-head">Your Journey</h5>
+    </div>
+    <div class="col-sm-8 row">
+      <div class="col-sm-12 form-group">
+        <p class="lead mb-0">
+          Take a short quiz and let us recommend a tour that fits your soul.
+        </p>
       </div>
     </div>
+    <div class="col-sm-2 d-flex align-items-end">
+      <a href="{% url 'quiz_start' 1 %}" class="btn btn-search btn-primary hvr-sweep-to-right w-100">
+        Start Quiz
+      </a>
+    </div>
   </div>
+</div>
 
-    <section class="showcase" style="background: url('assets/img/worldmap.png') no-repeat center; background-size: cover">
+
+  <section style="    padding-top: 70px; padding-bottom: 0px;">
+    <div class="main-title">
+      <h2>Exprore Kyrgyzstan</h2>
+      <p>Kyrgyzstan is nestled between a few large mountain ranges, including Tien Shan and Pamir, and the mountains consist of 90% of the land. While places like Bishkek feel very metropolitan, a lot of the country still holds true to its Nomadic lifestyle, which is one of the main reasons Kyrgyzstan feels so special. With many people still living in the mountains, Kyrgyzstan is a place where you’ll be eager to discover the off the beaten track to fully immerse yourself into the Kyrgyz lifestyle, and this itinerary does just that!</p>
+    </div>
+
+    <div class="container">
+      <div class="row  feature-list center">
+
+        {% for i in infoblocks %}
+        <div class="col-sm-6 col-md-4">
+          <span class="square-icon"><span class="{{ i.icon }}"></span></span>
+          <div class="desc">
+            <h5>{{ i.title }}</h5>
+            <p>{{ i.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </section>
+
+    <section class="showcase" style="background: url('assets/img/worldmap.png') no-repeat center; background-size: cover; padding-top: 20px;">
     <div class="main-title">
       <h2>Our Top Destination</h2>
       <p>Consectetur adipisicing elit. Quisquam fugit ducimus, qui molestias.</p>
@@ -107,28 +125,6 @@ transparent
   </section>
 
 
-  <section style="    padding-top: 0px;">
-    <div class="main-title">
-      <h2>Exprore Kyrgyzstan</h2>
-      <p>Kyrgyzstan is nestled between a few large mountain ranges, including Tien Shan and Pamir, and the mountains consist of 90% of the land. While places like Bishkek feel very metropolitan, a lot of the country still holds true to its Nomadic lifestyle, which is one of the main reasons Kyrgyzstan feels so special. With many people still living in the mountains, Kyrgyzstan is a place where you’ll be eager to discover the off the beaten track to fully immerse yourself into the Kyrgyz lifestyle, and this itinerary does just that!</p>
-    </div>
-
-    <div class="container">
-      <div class="row  feature-list center">
-
-        {% for i in infoblocks %}
-        <div class="col-sm-6 col-md-4">
-          <span class="square-icon"><span class="{{ i.icon }}"></span></span>
-          <div class="desc">
-            <h5>{{ i.title }}</h5>
-            <p>{{ i.description }}</p>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-
-    </div>
-  </section>
 
 <div class="flex-row bg-base">
     <div class="flex-col-6 cover-bg-img" style="background-image: url('{% static 'assets/img/bg3.png' %}');"></div>

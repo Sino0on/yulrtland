@@ -11,5 +11,10 @@ urlpatterns = [
     path('news/<int:pk>', NewsDetailView.as_view(), name='news_detail'),
     path('reviews', ReviewsView.as_view(), name='reviews'),
     path('faq', FAQView.as_view(), name='faq'),
-    path('contact', ContactUsView.as_view(), name='contact'),
+    path('contact', contact_view, name='contact'),
+    path('<int:quiz_id>/start/', quiz_start, name='quiz_start'),
+    path('question/<int:question_id>/', quiz_question, name='quiz_question'),
+    path('<int:quiz_id>/submit/', quiz_submit, name='quiz_submit'),
+    path('subscribe/', subscribe_newsletter, name='subscribe_newsletter'),
+
 ]

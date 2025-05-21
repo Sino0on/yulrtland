@@ -727,6 +727,7 @@ hr.dark {
   vertical-align: middle;
 }
 .nav-menu .navbar .navbar-brand > img {
+  width: 220px;
   display: inline-block;
 }
 .nav-menu .navbar.transparent {
@@ -967,6 +968,7 @@ hr.dark {
 }
 .nav-menu.shrink .navbar .navbar-brand > img {
   height: 40px;
+  width: auto;
 }
 .nav-menu.shrink .nav > li > a {
   height: 70px;
@@ -3828,7 +3830,7 @@ ul.itenary-steps.base .glyphicon {
   width: 100%;
 }
 .search-bar.bottom {
-  margin-top: -125px;
+  margin-top: -90px;
 }
 .search-bar.boxed {
   background: transparent;

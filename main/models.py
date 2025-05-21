@@ -212,3 +212,74 @@ class Faq(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+
+
+class Quiz(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+
+class Question(models.Model):
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='questions')
+    text = models.CharField(max_length=500)
+    order = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"Q{self.order}: {self.text}"
+
+class AnswerOption(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='options')
+    text = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.text
+
+class QuizSubmission(models.Model):
+    full_name = models.CharField(max_length=255)
+    contact = models.CharField(max_length=255)  # email or phone
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.full_name} ({self.contact})"
+
+class SubmissionAnswer(models.Model):
+    submission = models.ForeignKey(QuizSubmission, on_delete=models.CASCADE, related_name='answers')
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    selected_option = models.ForeignKey(AnswerOption, on_delete=models.CASCADE)
+
+
+
+class ContactMessage(models.Model):
+    full_name = models.CharField(max_length=255)
+    email = models.EmailField()
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.full_name} — {self.email}"
+
+
+class TripBooking(models.Model):
+    trip = models.ForeignKey(Destination, on_delete=models.CASCADE, related_name='bookings')
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    from_date = models.DateField()
+    to_date = models.DateField()
+    number_person = models.PositiveIntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} — {self.trip.title}"
+
+
+class NewsletterSubscriber(models.Model):
+    email = models.EmailField(unique=True)
+    subscribed_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email

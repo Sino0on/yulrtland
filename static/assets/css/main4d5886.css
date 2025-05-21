@@ -727,6 +727,7 @@ hr.dark {
   vertical-align: middle;
 }
 .nav-menu .navbar .navbar-brand > img {
+  width: 220px;
   display: inline-block;
 }
 .nav-menu .navbar.transparent {

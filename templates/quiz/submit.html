@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}
+Yurtland
+{% endblock %}
+{% load static %}
+{% block css %}
+<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">-->
+{% endblock %}
+{% block content %}
+<div class="container" style="padding: 40px 15px; padding-top: 125px">
+  <div class="search-bar bottom" style="background-color: #F9F6F0; padding: 30px; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); color: #1F5C5C;">
+
+    <div class="col-sm-12">
+      <h2 style="color: #1F5C5C; font-weight: bold; margin-bottom: 20px;">You're almost done!</h2>
+      <p style="font-size: 16px; margin-bottom: 30px;">Please leave your contact info — we’ll recommend the perfect tour for you ✨</p>
+
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="form-group" style="margin-bottom: 20px;">
+          <label for="fullName" style="font-size: 15px; color: #1F5C5C !important; display: block; margin-bottom: 5px;">Full Name</label>
+          <input type="text" name="full_name" id="fullName" required
+                 style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 30px;">
+          <label for="contact" style="font-size: 15px; color: #1F5C5C !important; display: block; margin-bottom: 5px;">Email or Phone</label>
+          <input type="text" name="contact" id="contact" required
+                 style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+        </div>
+
+        <button type="submit"
+                class="btn btn-search hvr-sweep-to-right"
+                style="background-color: #B8563A; color: white; padding: 10px 30px; border: none; border-radius: 8px;">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

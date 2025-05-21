@@ -1,0 +1,256 @@
+[
+  {
+    "model": "main.quiz",
+    "pk": 1,
+    "fields": {
+      "title": "What Type of Traveler Are You?",
+      "description": "Discover your travel personality and find the perfect Yurt Horizon adventure for you!",
+      "is_active": true
+    }
+  },
+  {
+    "model": "main.question",
+    "pk": 1,
+    "fields": {
+      "quiz": 1,
+      "text": "What excites you most about travel?",
+      "order": 1
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 1,
+    "fields": {
+      "question": 1,
+      "text": "Meeting locals and learning new traditions"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 2,
+    "fields": {
+      "question": 1,
+      "text": "Exploring wild and untouched nature"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 3,
+    "fields": {
+      "question": 1,
+      "text": "Tasting exotic dishes and unique flavors"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 4,
+    "fields": {
+      "question": 1,
+      "text": "Experiencing adventure and off-the-grid moments"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 5,
+    "fields": {
+      "question": 1,
+      "text": "Relaxing and finding inner peace"
+    }
+  },
+  {
+    "model": "main.question",
+    "pk": 2,
+    "fields": {
+      "quiz": 1,
+      "text": "What kind of scenery makes your heart race?",
+      "order": 2
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 6,
+    "fields": {
+      "question": 2,
+      "text": "Alpine lakes and snow-capped peaks"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 7,
+    "fields": {
+      "question": 2,
+      "text": "Wide open valleys with wild horses"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 8,
+    "fields": {
+      "question": 2,
+      "text": "Bustling markets and vibrant villages"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 9,
+    "fields": {
+      "question": 2,
+      "text": "Silent canyons and remote landscapes"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 10,
+    "fields": {
+      "question": 2,
+      "text": "Cozy yurts under a starry sky"
+    }
+  },
+  {
+    "model": "main.question",
+    "pk": 3,
+    "fields": {
+      "quiz": 1,
+      "text": "Which of these sounds like your perfect day?",
+      "order": 3
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 11,
+    "fields": {
+      "question": 3,
+      "text": "Riding a horse across the steppe"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 12,
+    "fields": {
+      "question": 3,
+      "text": "Cooking traditional food with locals"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 13,
+    "fields": {
+      "question": 3,
+      "text": "Watching eagle hunters perform"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 14,
+    "fields": {
+      "question": 3,
+      "text": "Meditating by a lake"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 15,
+    "fields": {
+      "question": 3,
+      "text": "Photographing majestic landscapes"
+    }
+  },
+  {
+    "model": "main.question",
+    "pk": 4,
+    "fields": {
+      "quiz": 1,
+      "text": "What\u2019s most important to you when you travel?",
+      "order": 4
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 16,
+    "fields": {
+      "question": 4,
+      "text": "Cultural connection"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 17,
+    "fields": {
+      "question": 4,
+      "text": "Natural beauty"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 18,
+    "fields": {
+      "question": 4,
+      "text": "Deep relaxation"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 19,
+    "fields": {
+      "question": 4,
+      "text": "Authentic food"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 20,
+    "fields": {
+      "question": 4,
+      "text": "Adventure and thrill"
+    }
+  },
+  {
+    "model": "main.question",
+    "pk": 5,
+    "fields": {
+      "quiz": 1,
+      "text": "What kind of accommodation do you prefer?",
+      "order": 5
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 21,
+    "fields": {
+      "question": 5,
+      "text": "Traditional yurt in nature"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 22,
+    "fields": {
+      "question": 5,
+      "text": "Stylish eco-lodge with comfort"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 23,
+    "fields": {
+      "question": 5,
+      "text": "Local guesthouse with charm"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 24,
+    "fields": {
+      "question": 5,
+      "text": "Doesn\u2019t matter \u2014 just give me the views"
+    }
+  },
+  {
+    "model": "main.answeroption",
+    "pk": 25,
+    "fields": {
+      "question": 5,
+      "text": "I want to sleep under the stars"
+    }
+  }
+]

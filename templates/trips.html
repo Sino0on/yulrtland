@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block title %}
 Yurt Horizon
 {% endblock %}
 {% load static %}
 {% block content %}
-  <div class="page-img" style="background-image: url('{{ about.image_trip.url }}');">
+  <div class="page-img" style="background-image: url('{{ about.image_trip.url }}'); padding-top: 200px;">
     <div class="container">
       <div class="col-sm-8">
         <h1 class="main-head">Trip List</h1>
@@ -27,108 +28,95 @@ Yurt Horizon
       <div class="row">
         <div class="col-sm-4">
 
-          <div class="sidebar">
-            <div class="border-box">
-              <div class="box-title">Tour Search</div>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search Site">
-                <div class="input-group-btn">
-                  <button class="btn btn-primary">Search</button>
+          <form method="get" action="{% url 'trips' %}">
+            <div class="sidebar">
+
+              <!-- Search Field -->
+              <div class="border-box">
+                <div class="box-title">Tour Search</div>
+                <div class="input-group">
+                  <input type="text" name="search" class="form-control" placeholder="Search Site" value="{{ request.GET.search }}">
+                  <div class="input-group-btn">
+                    <button class="btn btn-primary">Search</button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="border-box">
-              <div class="box-title">Choose Country</div>
-              <select class="form-control selectpicker">
-                <option value="">Choose</option>
-              </select>
-            </div>
+              <!-- Country / Region -->
+              <div class="border-box">
+                <div class="box-title">Choose Country</div>
+                <select name="oblasti" class="form-control selectpicker">
+                  <option value="">Choose</option>
+                  {% for tour in trips %}
+                    {% if tour.oblasti %}
+                      <option value="{{ tour.oblasti }}" {% if request.GET.oblasti == tour.oblasti %}selected{% endif %}>{{ tour.oblasti }}</option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+              </div>
 
-            <div class="border-box">
-              <div class="box-title">Difficulty</div>
-              <div>
+              <!-- Difficulty -->
+              <div class="border-box">
+                <div class="box-title">Difficulty</div>
                 <div class="btn-group" data-toggle="buttons">
-                  <label class="btn btn-default active" data-toggle="tooltip" data-placement="bottom" title="Easy">
-                    <input type="radio" name="options" id="option1" checked>
-                    <span class="icon-easy"></span>
-                  </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Easy">
-                    <input type="radio" name="options" id="option2">
-                    <span class="icon-medium"></span>
-                  </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Difficult">
-                    <input type="radio" name="options" id="option3">
-                    <span class="icon-difficult"></span>
-                  </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Hard">
-                    <input type="radio" name="options" id="option4">
-                    <span class="icon-hard"></span>
-                  </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Extreme">
-                    <input type="radio" name="options" id="option5">
-                    <span class="icon-extreme"></span>
-                  </label>
+                  {% for level in levels %}
+                    <label class="btn btn-default {% if request.GET.level == level %}active{% endif %}" data-toggle="tooltip" title="{{ level|capfirst }}">
+                      <input type="radio" name="level" value="{{ level }}" {% if request.GET.level == level %}checked{% endif %}>
+                      <span class="icon-{{ level }}"></span>
+                    </label>
+                  {% endfor %}
                 </div>
               </div>
-            </div>
 
-            <div class="border-box">
-              <div class="box-title">Price Range</div>
-              <div class="price-widget">
-                <div id="price-slider"></div>
-                <div id="amount-min" class="pull-left"></div>
-                <div id="amount-max" class="pull-right"></div>
+              <!-- Price (you'll need JS to bind min/max values to hidden fields) -->
+              <div class="border-box">
+                <div class="box-title">Price Range</div>
+                <div class="price-widget">
+                  <input type="hidden" name="price__gte" id="min_price" value="{{ request.GET.price__gte }}">
+                  <input type="hidden" name="price__lte" id="max_price" value="{{ request.GET.price__lte }}">
+                  <div id="price-slider"></div>
+                  <div id="amount-min" class="pull-left">{{ request.GET.price__gte }}</div>
+                  <div id="amount-max" class="pull-right">{{ request.GET.price__lte }}</div>
+                </div>
               </div>
-            </div>
 
-            <div class="border-box">
-              <div class="box-title">Category</div>
-              <ul class="checklist">
-                <li>
-                  <input type="checkbox">All Style</li>
-                <li>
-                  <input type="checkbox">Trekking</li>
-                <li>
-                  <input type="checkbox">Hiking &amp; Sightseeing</li>
-                <li>
-                  <input type="checkbox">Relaxation</li>
-                <li>
-                  <input type="checkbox">Adventure</li>
-              </ul>
-            </div>
 
-            <div class="border-box">
-              <div class="box-title">Duration</div>
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label>Days</label>
-                    <select class="form-control selectpicker">
-                      <option value="">1</option>
-                      <option value="">2</option>
-                      <option value="">3</option>
-                      <option value="">4</option>
-                      <option value="">5</option>
-                    </select>
+
+              <!-- Duration -->
+              <div class="border-box">
+                <div class="box-title">Duration</div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Days</label>
+                      <select name="days" class="form-control selectpicker">
+                        <option value="">All</option>
+                        {% for i in numbers %}
+                          <option value="{{ i }}" {% if request.GET.days == i %}selected{% endif %}>{{ i }}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
                   </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label>Nights</label>
-                    <select class="form-control selectpicker">
-                      <option value="">1</option>
-                      <option value="">2</option>
-                      <option value="">3</option>
-                      <option value="">4</option>
-                      <option value="">5</option>
-                    </select>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Nights</label>
+                      <select name="nights" class="form-control selectpicker">
+                        <option value="">All</option>
+                        {% for i in numbers %}
+                          <option value="{{ i }}" {% if request.GET.nights == i %}selected{% endif %}>{{ i }}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-          </div>
+              <div class="border-box text-center mt-4">
+                <button type="submit" class="btn btn-primary">Apply Filters</button>
+              </div>
+            </div>
+          </form>
+
 
 
 
