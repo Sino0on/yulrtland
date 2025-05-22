@@ -13,31 +13,31 @@ transparent
     <div class="main-image-txt center-txt">
       <h1 class="main-header">Yurt Horizon</h1>
       <hr>
-      <p class="sub-header">Wander Exotic places and never get lost.</p>
+      <p class="sub-header">{% trans 'Wander Exotic places and never get lost.' %}</p>
       <a href="{% url 'trips' %}" style="    background: #e84130;" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
     </div>
     <video autoplay="" muted="" loop="">
       <source src="{% static 'assets/back.MOV' %}" type="video/mp4">
-        Your browser does not support the video tag.
+        {% trans 'Your browser does not support the video tag.' %}
     </video>
   </div>
 
   <div class="container">
   <div class="search-bar bottom">
     <div class="col-sm-2 text-wrap">
-      <h2 class="main-head">Find</h2>
-      <h5 class="sub-head">Your Journey</h5>
+      <h2 class="main-head">{% trans 'Find' %}</h2>
+      <h5 class="sub-head">{% trans 'Your Journey' %}</h5>
     </div>
     <div class="col-sm-8 row">
       <div class="col-sm-12 form-group">
         <p class="lead mb-0">
-          Take a short quiz and let us recommend a tour that fits your soul.
+          {% trans 'Take a short quiz and let us recommend a tour that fits your soul.' %}
         </p>
       </div>
     </div>
     <div class="col-sm-2 d-flex align-items-end">
       <a href="{% url 'quiz_start' 1 %}" class="btn btn-search btn-primary hvr-sweep-to-right w-100">
-        Start Quiz
+        {% trans 'Start Quiz' %}
       </a>
     </div>
   </div>
@@ -94,7 +94,7 @@ transparent
                 {% else %}
                 <span class="icon-extreme"></span>
                 {% endif %}
-                <h4 class="title"><a href="">{{ i.title }}</a></h4>
+                <h4 class="title"><a href="{% url 'trip_detail' i.pk %}">{{ i.title }}</a></h4>
               </div>
 
               <div class="sub-title">

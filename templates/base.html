@@ -65,16 +65,16 @@
         <div class="navbar-collapse collapse" id="main-navbar">
           <ul class="nav navbar-nav">
             <li>
-              <a href="{% url 'home' %}">Home</a>
+              <a href="{% url 'home' %}">{% trans 'Home' %}</a>
             </li>
             <li>
-              <a href="{% url 'about-us' %}">About us</a>
+              <a href="{% url 'about-us' %}">{% trans 'About us' %}</a>
             </li>
             <li>
-              <a href="{% url 'reviews' %}">Reviews</a>
+              <a href="{% url 'reviews' %}">{% trans 'Reviews' %}</a>
             </li>
             <li class="dropdown">
-              <a href="{% url 'trips' %}">Best Tours</a>
+              <a href="{% url 'trips' %}">{% trans 'Best Tours' %}</a>
               <ul class="dropdown-menu">
                 {% for i in best_tours %}
                 <li><a href="{% url 'trip_detail' i.pk %}">{{ i.title }}</a>
@@ -83,7 +83,7 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="{% url 'news' %}" class="dropdown-toggle">Blog</a>
+              <a href="{% url 'news' %}" class="dropdown-toggle">{% trans 'Blog' %}</a>
               <ul class="dropdown-menu">
                 {% for i in categories %}
                 <li><a href="{% url 'news' %}?category={{ i.pk }}">{{ i.title }}</a>
@@ -92,17 +92,17 @@
               </ul>
             </li>
             <li>
-              <a href="{% url 'faq' %}">FAQ</a>
+              <a href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
             </li>
             <li>
-              <a href="{% url 'contact' %}">Contact us</a>
+              <a href="{% url 'contact' %}">{% trans 'Contact us' %}</a>
             </li>
             {% load i18n %}
 
-            <li class="dropdown">
+            <li class="dropdown ">
               {% get_current_language as LANGUAGE_CODE %}
               <a href="#">{{ LANGUAGE_CODE|upper }}</a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu dropdown-menu-right" style="width: 0px;">
 
                 <li>
                   <form action="{% url 'set_language' %}" method="post" style="display: inline;">

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block title %}
-Yurtland
+Yurt Horizon
 {% endblock %}
 {% load static %}
 {% block content %}
@@ -297,43 +297,29 @@ Yurtland
               <div class="row">
                 <div class="col-sm-6">
                   <ul class="media-list review-comment">
+                  {% for review in trip.reviews.all %}
                     <li class="media">
                       <div class="media-left">
-                        <a href="#">
-                          <img src="http://placehold.it/70x70" class="media-object" alt="">
-                        </a>
+                        <img src="{{ review.image.url }}" class="media-object" alt="">
                       </div>
                       <div class="media-body">
-                        <h4 class="media-heading">Kim L. Burney</h4> 
+                        <h4 class="media-heading">{{ review.full_name }}</h4>
                         <div class="rating">
-                          <span class="icon-star"></span>
-                          <span class="icon-star"></span>
-                          <span class="icon-star"></span>
-                          <span class="icon-star"></span>
-                          <span class="icon-star-empty"></span>
+                          {% for j in "12345" %}
+                            {% if j|floatformat:0 <= i.reiting|floatformat:0 %}
+                              <span class="icon-star"></span>
+                            {% else %}
+                              <span class="icon-star-empty"></span>
+                            {% endif %}
+                          {% endfor %}
                         </div>
-                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                        <p>{{ review.content }}</p>
                       </div>
                     </li>
-                    <li class="media">
-                      <div class="media-left">
-                        <a href="#">
-                          <img src="http://placehold.it/70x70" class="media-object" alt="">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                        <h4 class="media-heading">Shing Ch'in</h4> 
-                        <div class="rating">
-                          <span class="icon-star"></span>
-                          <span class="icon-star"></span>
-                          <span class="icon-star"></span>
-                          <span class="icon-star"></span>
-                          <span class="icon-star-empty"></span>
-                        </div>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                      </div>
-                    </li>
-                  </ul>
+
+                  {% endfor %}
+                </ul>
+
                 </div>
                 <div class="col-sm-6">
                   <div class="add-comment">

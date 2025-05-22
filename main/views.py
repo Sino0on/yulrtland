@@ -109,6 +109,7 @@ class NewsListView(generic.ListView):
         context['about'] = SiteSetting.objects.all().first()
         context['best_tours'] = Destination.objects.all()[:5]
         context['categories'] = Category.objects.all()
+        context['last_news'] = News.objects.all()[:3]
         context['tags'] = Tag.objects.all()
         return context
 

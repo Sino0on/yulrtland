@@ -81,6 +81,7 @@ class DatePrice(models.Model):
 
 
 class Review(models.Model):
+    destination = models.ForeignKey(Destination, on_delete=models.CASCADE, related_name='reviews', blank=True, null=True)
     full_name = models.CharField(max_length=123, blank=True, null=True)
     reiting = models.CharField(max_length=1, blank=True, null=True)
     country = models.CharField(max_length=123, blank=True, null=True)

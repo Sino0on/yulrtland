@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block title %}
-Yurtland
+Yurt Horizon
 {% endblock %}
 {% load static %}
 {% block content %}
@@ -24,9 +24,8 @@ Yurtland
               <span>{{ news.created_at }}</span>
               <span class="dot">·</span>
               <span class="italic">in</span>
-              <a href="{% url 'news' %}?category={{ news.category.pk }}">{{ news.category }}</a>, <a href="#">Asia</a>
+              <a href="{% url 'news' %}?category={{ news.category.pk }}">{{ news.category }}</a>
               <span class="dot">·</span>
-              <a href="#">4 Comments</a>
             </p>
           </div>
           <div class="col-sm-2">
@@ -59,59 +58,7 @@ Yurtland
                 <a href="#" class="social-icon"><span class="fa fa-linkedin"></span></a>
               </div>
             </div>
-            <div class="review-comment">
-              <div class="section-title left">
-                <h4>Reviews &amp; Comments</h4>
-              </div>
-              <ul class="media-list review-comment">
-                <li>
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#">
-                        <img src="http://placehold.it/70x70" class="media-object" alt="">
-                      </a>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Kim L. Burney</h4> 
-                      <div class="rating">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star-empty"></span>
-                      </div>
-                      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#">
-                        <img src="http://placehold.it/70x70" class="media-object" alt="">
-                      </a>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading">Shing Ch'in</h4> 
-                      <div class="rating">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star-empty"></span>
-                      </div>
-                      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</div>
-                  </div>
-                </li>
-              </ul>
-              <div class="add-comment">
-                <div class="form-group">
-                  <label>Add Comment</label>
-                  <textarea class="form-control">Your comment</textarea>
-                  <button class="btn btn-primary">Add Comment</button>
-                </div>
-              </div>
-            </div>
+
           </div>
 
         </div>

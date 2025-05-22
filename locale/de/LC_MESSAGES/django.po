@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-22 19:43+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: core/settings.py:204 templates/base.html:113
+msgid "English"
+msgstr ""
+
+#: core/settings.py:205 templates/base.html:124
+msgid "German"
+msgstr ""
+
+#: core/settings.py:261
+msgid "Добро пожаовать!"
+msgstr ""
+
+#: core/settings.py:281
+msgid "Домой"
+msgstr ""
+
+#: core/settings.py:284 core/settings.py:299
+msgid "Поддержка"
+msgstr ""
+
+#: main/models.py:6
+msgid "Easy"
+msgstr "Einfach"
+
+#: main/models.py:7
+msgid "Medium"
+msgstr "Mittel"
+
+#: main/models.py:8
+msgid "Hard"
+msgstr "Hart"
+
+#: main/models.py:9
+msgid "Extreme"
+msgstr "Extrem"
+
+#: templates/base.html:68
+msgid "Home"
+msgstr "Startseite"
+
+#: templates/base.html:71
+msgid "About us"
+msgstr "Über uns"
+
+#: templates/base.html:74
+msgid "Reviews"
+msgstr "Bewertungen"
+
+#: templates/base.html:77
+msgid "Best Tours"
+msgstr "Beste Touren"
+
+#: templates/base.html:86
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/base.html:95
+msgid "FAQ"
+msgstr "FAQ"
+
+#: templates/base.html:98
+msgid "Contact us"
+msgstr "Kontaktieren Sie uns"
+
+#: templates/index.html:16
+msgid "Wander Exotic places and never get lost."
+msgstr "Entdecke exotische Orte und verliere dich nie."
+
+#: templates/index.html:21
+msgid "Your browser does not support the video tag."
+msgstr "Ihr Browser unterstützt das Video-Tag nicht."
+
+#: templates/index.html:28
+msgid "Find"
+msgstr "Finde"
+
+#: templates/index.html:29
+msgid "Your Journey"
+msgstr "Deine Reise"
+
+#: templates/index.html:34
+msgid "Take a short quiz and let us recommend a tour that fits your soul."
+msgstr "Mach ein kurzes Quiz und lass dir eine Reise empfehlen, die zu deiner Seele passt."
+
+#: templates/index.html:40
+msgid "Start Quiz"
+msgstr "Quiz starten"

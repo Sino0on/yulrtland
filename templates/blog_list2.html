@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block title %}
-Yurtland
+Yurt Horizon
 {% endblock %}
 {% load static %}
 {% block content %}
@@ -31,7 +31,7 @@ Yurtland
           <article class="post-list full-img">
             <div class="post-img" style="background-image: url('{{ i.image.url }}')">
               <div class="item-overlay">
-                <a href="#"><span class="icon-binocular"></span></a>
+                <a href="{% url 'news_detail' i.pk %}"><span class="icon-binocular"></span></a>
               </div>
             </div>
             <div class="post-summary">
