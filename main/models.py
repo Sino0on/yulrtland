@@ -1,11 +1,12 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.utils.translation import gettext_lazy as _
 
 ranks = (
-    ('Easy', 'Easy'),
-    ('Medium', 'Medium'),
-    ('Hard', 'Hard'),
-    ('Extreme', 'Extreme'),
+    ('Easy', _('Easy')),
+    ('Medium', _('Medium')),
+    ('Hard', _('Hard')),
+    ('Extreme', _('Extreme')),
 )
 
 class Features(models.Model):
