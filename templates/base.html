@@ -101,7 +101,7 @@
 
             <li class="dropdown ">
               {% get_current_language as LANGUAGE_CODE %}
-              <a href="#">{{ LANGUAGE_CODE|upper }}</a>
+              <a href="#">{% if LANGUAGE_CODE|upper == 'EN' %}English{% else %}Deutsch{% endif %}</a>
               <ul class="dropdown-menu dropdown-menu-right" style="width: 0px;">
 
                 <li>
@@ -110,7 +110,7 @@
                     <input type="hidden" name="next" value="{{ request.get_full_path|cut:'/de' }}">
                     <input type="hidden" name="language" value="en">
                     <button type="submit" style="border: none; background: none; padding: 5px 20px; text-align: left;">
-                      {% trans 'English' %}
+                      English
                     </button>
                   </form>
                 </li>
@@ -121,7 +121,7 @@
                     <input type="hidden" name="next" value="{{ request.path }}">
                     <input type="hidden" name="language" value="de">
                     <button type="submit" style="border: none; background: none; padding: 5px 20px; text-align: left;">
-                      {% trans 'German' %}
+                      Deutsch
                     </button>
                   </form>
                 </li>
