@@ -150,6 +150,7 @@ class FAQView(generic.TemplateView):
         context['destinations'] = Destination.objects.all()[:4]
         context['best_tours'] = Destination.objects.all()[:5]
         context['reviews'] = Review.objects.all()
+        context['faq'] = Faq.objects.all()
         return context
 
 
