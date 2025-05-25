@@ -275,7 +275,7 @@ from django.urls import reverse
 import requests
 
 def send_telegram_notification(text, booking_id=None, model_admin_path=None):
-    bot_token = "5201413113:AAFE7qWzUHhm_aIxM1Ha6LOZI0ADgXopxqI"
+    bot_token = "7367640510:AAG8d6datu7SPhACMHxQWeP4LIujnxueowY"
     chat_id = "-1002572536402"
 
     if booking_id and model_admin_path:
