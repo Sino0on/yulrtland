@@ -91,7 +91,6 @@ class AboutUsView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['about'] = SiteSetting.objects.all().first()
-        context['about'] = SiteSetting.objects.all().first()
         context['categories'] = Category.objects.all()
         context['reviews'] = Review.objects.all()
         context['best_tours'] = Destination.objects.all()[:5]
