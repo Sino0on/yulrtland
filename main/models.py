@@ -290,7 +290,7 @@ class NewsletterSubscriber(models.Model):
 
 class FaqCategory(models.Model):
     title = models.CharField(max_length=255)
-    description = RichTextField()
+    description = RichTextField(blank=True, null=True)
     created_at = models.DateTimeField()
 
     def __str__(self):
