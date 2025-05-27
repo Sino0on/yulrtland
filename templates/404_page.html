@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+Yurt Horizon
+{% endblock %}
+{% load static %}
+{% block content %}
+  <section>
+    <div class="container page-404">
+      <div class="clip-text clip-text_one" style="background-image: url('{% static 'http://placehold.it/1000x500' %}')">404</div>
+      <h2>This Page Could Not Be Found!</h2>
+      <h5>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h5>
+      <div class="search-field">
+        <div class="form-group pull-center">
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+{% endblock %}
+{% block js %}
+  <script src="{% static 'assets/js/min/countnumbers.min.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+{% endblock %}

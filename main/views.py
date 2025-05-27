@@ -3,6 +3,7 @@ from django.views import generic
 
 from .filters import DestinationFilter
 from .models import *
+from decouple import config
 
 
 # def home(request):
@@ -275,11 +276,11 @@ from django.urls import reverse
 import requests
 
 def send_telegram_notification(text, booking_id=None, model_admin_path=None):
-    bot_token = "7367640510:AAG8d6datu7SPhACMHxQWeP4LIujnxueowY"
+    bot_token = config('BOT_TOKEN')
     chat_id = "-1002572536402"
 
     if booking_id and model_admin_path:
-        admin_url = f"http://127.0.0.1:8000/admin/{model_admin_path}/{booking_id}/change/"
+        admin_url = f"https://yurthorizon.com/admin/{model_admin_path}/{booking_id}/change/"
         text += f"\n\n🔗 [View in Admin Panel]({admin_url})"
 
     payload = {
@@ -307,3 +308,11 @@ def subscribe_newsletter(request):
                 messages.info(request, "You're already subscribed.")
 
     return redirect(request.META.get('HTTP_REFERER', '/'))
+
+
+def custom_404(request, exception):
+    return render(request, '404_page.html', status=404)
+
+
+def icons(request):
+    return render(request, 'iconfont.html', status=404)

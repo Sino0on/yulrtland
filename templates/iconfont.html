@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+Yurt Horizon
+{% endblock %}
+{% load static %}
+{% block content %}
+  <section>
+    <div class="container">
+      <div class="border-box">
+        <br>
+        <script type="text/javascript" src="assets/font/iconfont/js/angular.min.js"></script>
+        <div ng-app="icon" class="iconfont">
+          <div class="main-title">
+            <h2>Available Icons</h2>
+            <p>300 Customised Icon Fonts specially designed for travel/adventure sites, that can be easily searched and used. All scalable and ready to go. Additionally Glyphicons / Fontawesome can be use alternatively</p>
+          </div>
+
+          <div class="container">
+            <div class="col-sm-4 col-sm-offset-4">
+              <input ng-model="sort" class="form-control" placeholder="Search Available Icon" />
+              <div class="how-to-use">
+                <span data-toggle="modal" data-target="#iconhelp">How to use?</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="icon-wrapper">
+            <div ng-controller="IconController">
+
+              <div class="row search-div"></div>
+
+              <div class="wrapper" style="">
+                <div ng-repeat="post in posts | filter : sort | orderBy : 'category'" class=" col-md-1 col-sm-3 col-xs-4">
+                  <div class="glyph">
+                    <div class="preview-glyphs">
+                      <span class="step size"><i class="size {{post.name}}"></i></span>
+                    </div>
+                    <div class="usage">
+                      <input class="class" type="text" readonly="readonly" onClick="this.select();" value="{{post.name}}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="gradient-effect"></div>
+        </div>
+
+        <div class="modal fade" id="iconhelp" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">How To Use?</h4>
+              </div>
+              <div class="modal-body">
+                <div class="glyph">
+                  <div class="preview-glyphs">
+                    <span class="step size"><i class="size icon-addon"></i></span>
+                  </div>
+                  <div class="usage">
+                    <input type="text" value="icon-addon" readonly="readonly" class="class select-icon-class">
+                  </div>
+                </div>
+                <br>Just Copy the class eg. icon-addon and add to element that you like to use as icon.
+                <br>eg. &lt;span class="icon-addon"&gt;&lt;/span&gt;
+                <br>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="assets/font/iconfont/data.json"></script>
+        <script type="text/javascript" src="assets/js/iconfont.js"></script>
+
+      </div>
+    </div>
+  </section>
+{% endblock %}
+{% block js %}
+  <script src="{% static 'assets/js/min/countnumbers.min.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+{% endblock %}

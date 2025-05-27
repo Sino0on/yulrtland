@@ -16,5 +16,6 @@ urlpatterns = [
     path('question/<int:question_id>/', quiz_question, name='quiz_question'),
     path('<int:quiz_id>/submit/', quiz_submit, name='quiz_submit'),
     path('subscribe/', subscribe_newsletter, name='subscribe_newsletter'),
+    path('icons/', icons, name='icons'),
 
 ]
