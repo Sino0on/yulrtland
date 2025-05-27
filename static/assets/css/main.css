@@ -730,6 +730,12 @@ hr.dark {
   width: 220px;
   display: inline-block;
 }
+@media screen and (max-width: 768px) {
+    .nav-menu .navbar .navbar-brand > img {
+        height: 40px;
+        width: auto;
+    }
+}
 .nav-menu .navbar.transparent {
   background: transparent;
 }
