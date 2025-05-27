@@ -70,6 +70,7 @@ admin.site.register(QuizSubmission, QuizSubmissionAdmin)
 admin.site.register(TripBooking)
 admin.site.register(NewsletterSubscriber)
 admin.site.register(ContactMessage)
+admin.site.register(FaqCategory)
 
 
 
