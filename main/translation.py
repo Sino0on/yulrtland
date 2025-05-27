@@ -66,3 +66,7 @@ class FeaturesTranslationOptions(TranslationOptions):
 class FeaturesTranslationOptions(TranslationOptions):
     fields = ('text',)
 
+
+@register(FaqCategory)
+class FeaturesTranslationOptions(TranslationOptions):
+    fields = ('title', 'description')

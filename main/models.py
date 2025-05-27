@@ -207,6 +207,7 @@ class SiteSetting(SingletonModel):
 class Faq(models.Model):
     question = models.CharField(max_length=255)
     answer = RichTextField()
+    category = models.ForeignKey('FaqCategory', on_delete=models.CASCADE, related_name='faqs', blank=True, null=True)
     created_at = models.DateTimeField()
 
     def __str__(self):
@@ -285,3 +286,17 @@ class NewsletterSubscriber(models.Model):
 
     def __str__(self):
         return self.email
+
+
+class FaqCategory(models.Model):
+    title = models.CharField(max_length=255)
+    description = RichTextField()
+    created_at = models.DateTimeField()
+
+    def __str__(self):
+        return f'{self.title}'
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = 'Категория для Faq'
+        verbose_name_plural = 'Категории для Faq'

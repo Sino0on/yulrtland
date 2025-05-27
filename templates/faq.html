@@ -25,14 +25,15 @@ Yurt Horizon
   </div>
   <main>
     <section>
+      {% for faqs in categories %}
     <div class="container">
       <div class="main-title">
-        <h1>Testimonials Static</h1>
-        <p>Static, No carousel used.</p>
+        <h1>{{ faqs.title }}</h1>
+        <p>{{ faqs.description|safe }}</p>
       </div>
       <div class="">
           <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
-            {% for i in faq %}
+            {% for i in faqs.faqs.all %}
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
                 <h4 class="panel-title">
@@ -63,6 +64,7 @@ Yurt Horizon
           <br>
       </div>
     </div>
+      {% endfor %}
     </section>
   </main>
 {% endblock %}
