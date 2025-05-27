@@ -34,18 +34,23 @@ Yurt Horizon
           <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
             {% for i in faq %}
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="heading1One">
+              <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
                 <h4 class="panel-title">
-
-									<a role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapse1One" aria-expanded="true" aria-controls="collapseOne" class="">
-
-										{{ i.question }}
-
-									</a>
-
-								</h4>
+                  <a role="button"
+                     data-toggle="collapse"
+                     data-parent="#accordion1"
+                     href="#collapse{{ forloop.counter }}"
+                     aria-expanded="false"
+                     aria-controls="collapse{{ forloop.counter }}"
+                     class="collapsed">
+                    {{ i.question }}
+                  </a>
+                </h4>
               </div>
-              <div id="collapse1One" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" aria-expanded="true" style="">
+              <div id="collapse{{ forloop.counter }}"
+                   class="panel-collapse collapse"
+                   role="tabpanel"
+                   aria-labelledby="heading{{ forloop.counter }}">
                 <div class="panel-body">
                   {{ i.answer|safe }}
                 </div>
@@ -53,11 +58,12 @@ Yurt Horizon
             </div>
             {% endfor %}
           </div>
-          <br>
-          <br>
 
-        </div>
-  </div></section>
+          <br>
+          <br>
+      </div>
+    </div>
+    </section>
   </main>
 {% endblock %}
 {% block js %}
