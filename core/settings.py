@@ -22,7 +22,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'yurthorizon.com', 'www.yurthorizon.c
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
+    # 'jazzmin',
     'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
