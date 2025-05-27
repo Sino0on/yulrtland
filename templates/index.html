@@ -11,10 +11,10 @@ transparent
 
   <div class="main-video with-overlay stick-top" style="background-image: url('{% static 'assets/img/das.webp' %}'); ">
     <div class="main-image-txt center-txt">
-      <h1 class="main-header">Yurt Horizon</h1>
+      <h1 class="main-header">{% trans 'Uncover the Soul of Kyrgyzstan' %}</h1>
       <hr>
-      <p class="sub-header">{% trans 'Wander Exotic places and never get lost.' %}</p>
-      <a href="{% url 'trips' %}" style="    background: #e84130;" class="btn btn-lg btn-primary hvr-sweep-to-right">Explore Trips</a>
+      <p class="sub-header">{% trans 'Bespoke journeys through wild mountains, nomadic culture, and untamed freedom. Crafted with heart, for travelers who seek the extraordinary.' %}</p>
+      <a href="{% url 'contact' %}" style="    background: #e84130;" class="btn btn-lg btn-primary hvr-sweep-to-right">{% trans 'Plan my trip' %}</a>
     </div>
     <video autoplay="" muted="" loop="">
       <source src="{% static 'assets/back.MOV' %}" type="video/mp4">
