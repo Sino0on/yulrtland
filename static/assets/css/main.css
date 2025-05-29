@@ -1086,7 +1086,7 @@ hr.dark {
     margin: 15px;
   }
   .nav-menu.fixed .navbar-toggle .icon-bar {
-    background-color: #e84130;
+    background-color: black;
   }
   .nav-menu.fixed .nav > li > a {
     color: #fff;

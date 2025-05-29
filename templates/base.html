@@ -68,13 +68,13 @@
               <a href="{% url 'home' %}">{% trans 'Home' %}</a>
             </li>
             <li>
-              <a href="{% url 'about-us' %}">{% trans 'About us' %}</a>
+              <a href="{% url 'about-us' %}">{% trans 'About' %}</a>
             </li>
             <li>
               <a href="{% url 'reviews' %}">{% trans 'Reviews' %}</a>
             </li>
             <li class="dropdown">
-              <a href="{% url 'trips' %}">{% trans 'Best Tours' %}</a>
+              <a href="{% url 'trips' %}">{% trans 'Tours' %}</a>
               <ul class="dropdown-menu">
                 {% for i in best_tours %}
                 <li><a href="{% url 'trip_detail' i.pk %}">{{ i.title }}</a>
@@ -95,7 +95,7 @@
               <a href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
             </li>
             <li>
-              <a href="{% url 'contact' %}">{% trans 'Contact us' %}</a>
+              <a href="{% url 'contact' %}">{% trans 'Contact' %}</a>
             </li>
             {% load i18n %}
 
