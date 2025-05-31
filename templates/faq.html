@@ -34,25 +34,25 @@ Yurt Horizon
           <div class="">
             <div class="panel-group" id="accordion-{{ forloop.counter }}" role="tablist" aria-multiselectable="true">
               {% for i in faqs.faqs.all %}
-              {% with id=forloop.parentloop.counter|stringformat:"s" | add:forloop.counter|stringformat:"s" %}
+              {% with category_id=forloop.parentloop.counter question_id=forloop.counter %}
               <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading{{ id }}">
+                <div class="panel-heading" role="tab" id="heading{{ category_id }}{{ question_id }}">
                   <h4 class="panel-title">
                     <a role="button"
                        data-toggle="collapse"
-                       data-parent="#accordion-{{ forloop.parentloop.counter }}"
-                       href="#collapse{{ id }}"
+                       data-parent="#accordion-{{ category_id }}"
+                       href="#collapse{{ category_id }}{{ question_id }}"
                        aria-expanded="false"
-                       aria-controls="collapse{{ id }}"
+                       aria-controls="collapse{{ category_id }}{{ question_id }}"
                        class="collapsed">
                       {{ i.question }}
                     </a>
                   </h4>
                 </div>
-                <div id="collapse{{ id }}"
+                <div id="collapse{{ category_id }}{{ question_id }}"
                      class="panel-collapse collapse"
                      role="tabpanel"
-                     aria-labelledby="heading{{ id }}">
+                     aria-labelledby="heading{{ category_id }}{{ question_id }}">
                   <div class="panel-body">
                     {{ i.answer|safe }}
                   </div>
@@ -66,6 +66,7 @@ Yurt Horizon
           </div>
         </div>
       {% endfor %}
+
 
     </section>
   </main>
