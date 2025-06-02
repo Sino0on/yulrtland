@@ -1,0 +1,209 @@
+[
+  {
+    "model": "main.faqcategory",
+    "pk": 1,
+    "fields": {
+      "title": "Before You Go",
+      "title_en": "Before You Go",
+      "title_de": "Bevor du gehst",
+      "description": "",
+      "description_en": "",
+      "description_de": "",
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 1,
+    "fields": {
+      "question": "Do I need a visa to visit Kyrgyzstan?",
+      "question_en": "Do I need a visa to visit Kyrgyzstan?",
+      "question_de": "Brauche ich ein Visum für die Einreise nach Kirgisistan?",
+      "answer": "Good news — most travelers don’t! Citizens of the US, EU, UK, Australia, Canada, Japan, South Korea and many others can enter visa-free for up to 60 days. To check your country’s visa rules, visit the official site: https://www.evisa.e-gov.kg\n\nNeed a visa? You can apply online in minutes via the eVisa system. And of course — we’ll guide you through it if you need help.",
+      "answer_en": "Good news — most travelers don’t! Citizens of the US, EU, UK, Australia, Canada, Japan, South Korea and many others can enter visa-free for up to 60 days. To check your country’s visa rules, visit the official site: https://www.evisa.e-gov.kg\n\nNeed a visa? You can apply online in minutes via the eVisa system. And of course — we’ll guide you through it if you need help.",
+      "answer_de": "Gute Nachrichten – die meisten Reisenden brauchen keins! Staatsbürger der USA, EU, UK, Australien, Kanada, Japan, Südkorea und viele andere können bis zu 60 Tage visumfrei einreisen. Prüfe die Visabestimmungen deines Landes auf der offiziellen Website: https://www.evisa.e-gov.kg\n\nFalls du ein Visum brauchst, kannst du es online in wenigen Minuten über das E-Visasystem beantragen. Und natürlich helfen wir dir gerne dabei.",
+      "category": 1,
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 2,
+    "fields": {
+      "question": "What’s included in my trip?",
+      "question_en": "What’s included in my trip?",
+      "question_de": "Was ist in meiner Reise enthalten?",
+      "answer": "We take care of everything — so you can focus on the experience.\n\nIncluded:\n- All accommodations (guesthouses, yurt camps, hotels)\n- All meals (breakfast, lunch, dinner)\n- English-speaking local guide\n- Private transport with professional driver\n- Airport pick-up & drop-off\n- Cultural activities (eagle hunting, felt making, horseback riding & more)\n- Entrance fees to all sites\n- Drinking water daily\n\nNot included:\n- International flights\n- Travel insurance (required)\n- Alcoholic beverages\n- Personal expenses & tips",
+      "answer_en": "We take care of everything — so you can focus on the experience.\n\nIncluded:\n- All accommodations (guesthouses, yurt camps, hotels)\n- All meals (breakfast, lunch, dinner)\n- English-speaking local guide\n- Private transport with professional driver\n- Airport pick-up & drop-off\n- Cultural activities (eagle hunting, felt making, horseback riding & more)\n- Entrance fees to all sites\n- Drinking water daily\n\nNot included:\n- International flights\n- Travel insurance (required)\n- Alcoholic beverages\n- Personal expenses & tips",
+      "answer_de": "Wir kümmern uns um alles – damit du dich ganz auf das Erlebnis konzentrieren kannst.\n\nInklusive:\n- Alle Unterkünfte (Gästehäuser, Jurtenlager, Hotels)\n- Alle Mahlzeiten (Frühstück, Mittagessen, Abendessen)\n- Englischsprachiger lokaler Guide\n- Privater Transport mit professionellem Fahrer\n- Flughafenabholung & -rücktransfer\n- Kulturelle Aktivitäten (Adlerjagd, Filzherstellung, Reiten & mehr)\n- Eintrittsgebühren zu allen Sehenswürdigkeiten\n- Tägliches Trinkwasser\n\nNicht enthalten:\n- Internationale Flüge\n- Reiseversicherung (erforderlich)\n- Alkoholische Getränke\n- Persönliche Ausgaben & Trinkgelder",
+      "category": 1,
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 3,
+    "fields": {
+      "question": "Do I need travel insurance?",
+      "question_en": "Do I need travel insurance?",
+      "question_de": "Benötige ich eine Reiseversicherung?",
+      "answer": "Yes — we require all travelers to have comprehensive travel insurance that covers medical emergencies, trip delays and repatriation. It’s for your peace of mind, and ours. Let us know if you need recommendations.",
+      "answer_en": "Yes — we require all travelers to have comprehensive travel insurance that covers medical emergencies, trip delays and repatriation. It’s for your peace of mind, and ours. Let us know if you need recommendations.",
+      "answer_de": "Ja – wir verlangen, dass alle Reisenden eine umfassende Reiseversicherung haben, die medizinische Notfälle, Reiseverzögerungen und Rücktransport abdeckt. Für dein und unser gutes Gefühl. Wenn du Empfehlungen brauchst, sag Bescheid.",
+      "category": 1,
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 4,
+    "fields": {
+      "question": "What should I pack?",
+      "question_en": "What should I pack?",
+      "question_de": "Was sollte ich einpacken?",
+      "answer": "We’ll send you a full packing list before your trip, but here’s the gist:\n- Comfortable layers (the weather changes quickly)\n- A warm jacket (even in summer)\n- Hiking shoes or sturdy sneakers\n- A small daypack\n- Sunscreen, sunglasses, hat\n- Personal medications\n- Optional: swimsuit, headlamp, reusable water bottle\n\nAnd don’t forget your curiosity!",
+      "answer_en": "We’ll send you a full packing list before your trip, but here’s the gist:\n- Comfortable layers (the weather changes quickly)\n- A warm jacket (even in summer)\n- Hiking shoes or sturdy sneakers\n- A small daypack\n- Sunscreen, sunglasses, hat\n- Personal medications\n- Optional: swimsuit, headlamp, reusable water bottle\n\nAnd don’t forget your curiosity!",
+      "answer_de": "Wir senden dir vor der Reise eine vollständige Packliste, aber hier ist das Wichtigste:\n- Bequeme Kleidung im Zwiebellook (das Wetter wechselt schnell)\n- Eine warme Jacke (auch im Sommer)\n- Wanderschuhe oder stabile Sneaker\n- Kleiner Tagesrucksack\n- Sonnencreme, Sonnenbrille, Hut\n- Persönliche Medikamente\n- Optional: Badeanzug, Stirnlampe, wiederverwendbare Wasserflasche\n\nUnd vergiss deine Neugier nicht!",
+      "category": 1,
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faqcategory",
+    "pk": 2,
+    "fields": {
+      "title": "On the Road",
+      "title_en": "On the Road",
+      "title_de": "Unterwegs",
+      "description": "",
+      "description_en": "",
+      "description_de": "",
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 5,
+    "fields": {
+      "question": "How do we stay connected during the trip?",
+      "question_en": "How do we stay connected during the trip?",
+      "question_de": "Wie bleiben wir während der Reise in Verbindung?",
+      "answer": "In cities, most hotels have free Wi-Fi. In rural areas — especially yurt camps — connection is limited or absent. We recommend buying a local SIM card (our guide can assist) if your phone is unlocked. For emergencies, your family can reach us directly 24/7 — and we’ll get the message to you.",
+      "answer_en": "In cities, most hotels have free Wi-Fi. In rural areas — especially yurt camps — connection is limited or absent. We recommend buying a local SIM card (our guide can assist) if your phone is unlocked. For emergencies, your family can reach us directly 24/7 — and we’ll get the message to you.",
+      "answer_de": "In Städten haben die meisten Hotels kostenloses WLAN. In ländlichen Gegenden – vor allem in Jurtenlagern – ist der Empfang begrenzt oder nicht vorhanden. Wir empfehlen den Kauf einer lokalen SIM-Karte (dein Guide hilft dir dabei), wenn dein Handy entsperrt ist. Im Notfall kann deine Familie uns direkt erreichen – wir übermitteln die Nachricht an dich.",
+      "category": 2,
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 6,
+    "fields": {
+      "question": "What is transportation like?",
+      "question_en": "What is transportation like?",
+      "question_de": "Wie sieht der Transport aus?",
+      "answer": "You’ll travel in comfortable, air-conditioned 4x4 vehicles, driven by our experienced local drivers. Most main roads are well-paved, but expect some bumps and dust on mountain passes — it’s all part of the adventure.",
+      "answer_en": "You’ll travel in comfortable, air-conditioned 4x4 vehicles, driven by our experienced local drivers. Most main roads are well-paved, but expect some bumps and dust on mountain passes — it’s all part of the adventure.",
+      "answer_de": "Du reist in komfortablen, klimatisierten 4x4-Fahrzeugen mit unseren erfahrenen Fahrern. Die meisten Hauptstraßen sind gut ausgebaut, aber auf Gebirgspässen kann es holprig und staubig sein – das gehört zum Abenteuer.",
+      "category": 2,
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 7,
+    "fields": {
+      "question": "Is Kyrgyzstan safe for travelers?",
+      "question_en": "Is Kyrgyzstan safe for travelers?",
+      "question_de": "Ist Kirgisistan sicher für Reisende?",
+      "answer": "Absolutely. Kyrgyzstan is known for its warm hospitality and low crime rate. Our guides are trained in safety protocols and local customs. You’ll be in good hands every step of the way.",
+      "answer_en": "Absolutely. Kyrgyzstan is known for its warm hospitality and low crime rate. Our guides are trained in safety protocols and local customs. You’ll be in good hands every step of the way.",
+      "answer_de": "Absolut. Kirgisistan ist bekannt für seine herzliche Gastfreundschaft und eine sehr geringe Kriminalitätsrate. Unsere Guides sind in Sicherheitsprotokollen und kulturellen Gepflogenheiten geschult. Du bist in besten Händen.",
+      "category": 2,
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 8,
+    "fields": {
+      "question": "What happens in case of an emergency?",
+      "question_en": "What happens in case of an emergency?",
+      "question_de": "Was passiert im Notfall?",
+      "answer": "Your safety is our #1 priority. If you get sick or injured, our team will help you get medical attention and contact your insurance. We’re with you 24/7, and we’ll never leave you to deal with it alone.",
+      "answer_en": "Your safety is our #1 priority. If you get sick or injured, our team will help you get medical attention and contact your insurance. We’re with you 24/7, and we’ll never leave you to deal with it alone.",
+      "answer_de": "Deine Sicherheit steht für uns an erster Stelle. Wenn du krank wirst oder dich verletzt, helfen wir dir sofort medizinische Hilfe zu bekommen und kontaktieren deine Versicherung. Wir sind rund um die Uhr für dich da – du wirst niemals allein gelassen.",
+      "category": 2,
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faqcategory",
+    "pk": 3,
+    "fields": {
+      "title": "Culture & Daily Life",
+      "title_en": "Culture & Daily Life",
+      "title_de": "Kultur & Alltag",
+      "description": "",
+      "description_en": "",
+      "description_de": "",
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 9,
+    "fields": {
+      "question": "What language do people speak?",
+      "question_en": "What language do people speak?",
+      "question_de": "Welche Sprache spricht man in Kirgisistan?",
+      "answer": "Kyrgyz and Russian are the main languages. English is not widely spoken, but your guide will translate and help you connect. A smile, a few hand gestures, and maybe a postcard from home go a long way!",
+      "answer_en": "Kyrgyz and Russian are the main languages. English is not widely spoken, but your guide will translate and help you connect. A smile, a few hand gestures, and maybe a postcard from home go a long way!",
+      "answer_de": "Die Hauptsprachen sind Kirgisisch und Russisch. Englisch ist nicht weit verbreitet, aber dein Guide wird übersetzen und dir helfen, Kontakte zu knüpfen. Ein Lächeln, ein paar Gesten und vielleicht eine Postkarte von zu Hause wirken Wunder!",
+      "category": 3,
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 10,
+    "fields": {
+      "question": "Can I connect with locals?",
+      "question_en": "Can I connect with locals?",
+      "question_de": "Kann ich mit Einheimischen in Kontakt treten?",
+      "answer": "Definitely. You’ll stay with local families in guesthouses and yurts. Want to dive deeper? Our guides act as cultural bridges, translating and sharing stories on both sides. We’ll help you meet real people, not just pass by.",
+      "answer_en": "Definitely. You’ll stay with local families in guesthouses and yurts. Want to dive deeper? Our guides act as cultural bridges, translating and sharing stories on both sides. We’ll help you meet real people, not just pass by.",
+      "answer_de": "Auf jeden Fall. Du wirst bei einheimischen Familien in Gästehäusern und Jurten wohnen. Möchtest du tiefer eintauchen? Unsere Guides sind kulturelle Brückenbauer, die Geschichten auf beiden Seiten übersetzen und teilen.",
+      "category": 3,
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 11,
+    "fields": {
+      "question": "What’s the local religion?",
+      "question_en": "What’s the local religion?",
+      "question_de": "Welche Religion wird praktiziert?",
+      "answer": "Kyrgyzstan is a secular Muslim country, and religion is practiced moderately. You’ll also see cultural remnants from ancient beliefs and local traditions — especially in the countryside.",
+      "answer_en": "Kyrgyzstan is a secular Muslim country, and religion is practiced moderately. You’ll also see cultural remnants from ancient beliefs and local traditions — especially in the countryside.",
+      "answer_de": "Kirgisistan ist ein säkularer muslimischer Staat, Religion wird moderat praktiziert. Du wirst auch Überbleibsel alter Traditionen und Glaubensrichtungen entdecken – vor allem auf dem Land.",
+      "category": 3,
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 12,
+    "fields": {
+      "question": "What should I wear?",
+      "question_en": "What should I wear?",
+      "question_de": "Was sollte ich anziehen?",
+      "answer": "In most places, dress just like you would at home in summer. For visits to mosques or churches, wear long pants, and women should bring a light scarf to cover shoulders and head.",
+      "answer_en": "In most places, dress just like you would at home in summer. For visits to mosques or churches, wear long pants, and women should bring a light scarf to cover shoulders and head.",
+      "answer_de": "In den meisten Regionen kannst du dich kleiden wie zu Hause im Sommer. Beim Besuch von Moscheen oder Kirchen solltest du lange Hosen tragen, und Frauen sollten ein leichtes Tuch für Schultern und Kopf mitbringen.",
+      "category": 3,
+      "created_at": "2025-06-02T20:04:41.092159"
+    }
+  }
+]
