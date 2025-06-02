@@ -1,0 +1,149 @@
+[
+  {
+    "model": "main.faqcategory",
+    "pk": 1,
+    "fields": {
+      "title": "Before You Go",
+      "description": "",
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 1,
+    "fields": {
+      "question": "Do I need a visa to visit Kyrgyzstan?",
+      "answer": "Good news — most travelers don’t! Citizens of the US, EU, UK, Australia, Canada, Japan, South Korea and many others can enter visa-free for up to 60 days. To check your country’s visa rules, visit the official site: https://www.evisa.e-gov.kg\n\nNeed a visa? You can apply online in minutes via the eVisa system. And of course — we’ll guide you through it if you need help.",
+      "category": 1,
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 2,
+    "fields": {
+      "question": "What’s included in my trip?",
+      "answer": "We take care of everything — so you can focus on the experience.\n\nIncluded:\n- All accommodations (guesthouses, yurt camps, hotels)\n- All meals (breakfast, lunch, dinner)\n- English-speaking local guide\n- Private transport with professional driver\n- Airport pick-up & drop-off\n- Cultural activities (eagle hunting, felt making, horseback riding & more)\n- Entrance fees to all sites\n- Drinking water daily\n\nNot included:\n- International flights\n- Travel insurance (required)\n- Alcoholic beverages\n- Personal expenses & tips",
+      "category": 1,
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 3,
+    "fields": {
+      "question": "Do I need travel insurance?",
+      "answer": "Yes — we require all travelers to have comprehensive travel insurance that covers medical emergencies, trip delays and repatriation. It’s for your peace of mind, and ours. Let us know if you need recommendations.",
+      "category": 1,
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 4,
+    "fields": {
+      "question": "What should I pack?",
+      "answer": "We’ll send you a full packing list before your trip, but here’s the gist:\n- Comfortable layers (the weather changes quickly)\n- A warm jacket (even in summer)\n- Hiking shoes or sturdy sneakers\n- A small daypack\n- Sunscreen, sunglasses, hat\n- Personal medications\n- Optional: swimsuit, headlamp, reusable water bottle\n\nAnd don’t forget your curiosity!",
+      "category": 1,
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faqcategory",
+    "pk": 2,
+    "fields": {
+      "title": "On the Road",
+      "description": "",
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 5,
+    "fields": {
+      "question": "How do we stay connected during the trip?",
+      "answer": "In cities, most hotels have free Wi-Fi. In rural areas — especially yurt camps — connection is limited or absent. We recommend buying a local SIM card (our guide can assist) if your phone is unlocked. For emergencies, your family can reach us directly 24/7 — and we’ll get the message to you.",
+      "category": 2,
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 6,
+    "fields": {
+      "question": "What is transportation like?",
+      "answer": "You’ll travel in comfortable, air-conditioned 4x4 vehicles, driven by our experienced local drivers. Most main roads are well-paved, but expect some bumps and dust on mountain passes — it’s all part of the adventure.",
+      "category": 2,
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 7,
+    "fields": {
+      "question": "Is Kyrgyzstan safe for travelers?",
+      "answer": "Absolutely. Kyrgyzstan is known for its warm hospitality and low crime rate. Our guides are trained in safety protocols and local customs. You’ll be in good hands every step of the way.",
+      "category": 2,
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 8,
+    "fields": {
+      "question": "What happens in case of an emergency?",
+      "answer": "Your safety is our #1 priority. If you get sick or injured, our team will help you get medical attention and contact your insurance. We’re with you 24/7, and we’ll never leave you to deal with it alone.",
+      "category": 2,
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faqcategory",
+    "pk": 3,
+    "fields": {
+      "title": "Culture & Daily Life",
+      "description": "",
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 9,
+    "fields": {
+      "question": "What language do people speak?",
+      "answer": "Kyrgyz and Russian are the main languages. English is not widely spoken, but your guide will translate and help you connect. A smile, a few hand gestures, and maybe a postcard from home go a long way!",
+      "category": 3,
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 10,
+    "fields": {
+      "question": "Can I connect with locals?",
+      "answer": "Definitely. You’ll stay with local families in guesthouses and yurts. Want to dive deeper? Our guides act as cultural bridges, translating and sharing stories on both sides. We’ll help you meet real people, not just pass by.",
+      "category": 3,
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 11,
+    "fields": {
+      "question": "What’s the local religion?",
+      "answer": "Kyrgyzstan is a secular Muslim country, and religion is practiced moderately. You’ll also see cultural remnants from ancient beliefs and local traditions — especially in the countryside.",
+      "category": 3,
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  },
+  {
+    "model": "main.faq",
+    "pk": 12,
+    "fields": {
+      "question": "What should I wear?",
+      "answer": "In most places, dress just like you would at home in summer. For visits to mosques or churches, wear long pants, and women should bring a light scarf to cover shoulders and head.",
+      "category": 3,
+      "created_at": "2025-06-02T20:01:13.310976"
+    }
+  }
+]
