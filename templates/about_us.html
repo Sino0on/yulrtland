@@ -45,16 +45,17 @@ Yurt Horizon
     <div class="flex-col-6">
       <div class="padding-100">
         <div class="main-title left">
-          <h2>Explore World <br> Beyond</h2>
-          <p>Consectetur adipisicing elit. Quisquam fugit ducimus, qui molestias.</p>
+          <h2>About  <br> Yurt Horizon</h2>
+          <p>More than travel. A journey into the soul of Kyrgyzstan.</p>
         </div>
         <div class="row">
-          <div class="col-sm-6">Esse iusto quibusdam quae assumenda dignissimos eligendi magni dolor error sunt corporis laborum maiores. At ad, ratione delectus inventore voluptas cum nulla molestias perferendis iste quis laborum veniam reprehenderit ipsam vitae, corrupti.
-            Cumque enim, unde eveniet.</div>
-          <div class="col-sm-6">Asperiores odit error cupiditate nam aperiam animi laborum aliquid. Doloremque, reiciendis perferendis praesentium necessitatibus quis cupiditate. Laborum dicta, ipsa aliquam fugiat!</div>
+          <div class="col-sm-6">At Yurt Horizon, we don’t just organize tours — we craft life-changing experiences across Kyrgyzstan’s untouched landscapes. Our passion lies in connecting travelers with the deep-rooted traditions, raw beauty, and nomadic warmth of this ancient land.</div>
+          <div class="col-sm-6">Founded by locals, driven by heart, and committed to excellence, we believe in slow travel, real encounters, and unforgettable memories. From shimmering alpine lakes and yurt stays to eagle hunting shows and mountain dinners — everything we offer is authentic, curated, and deeply personal.</div>
+          <div class="col-m-3">Whether you seek solitude in highland silence or adventure on winding passes, our mission is simple:
+To make you feel not like a tourist, but like a guest of Kyrgyzstan.</div>
         </div>
         <br>
-        <a href="" class="btn btn-md btn-primary btn-line">Check All Destinations</a>
+        <a href="{% url 'trips' %}" class="btn btn-md btn-primary btn-line">Check All Destinations</a>
       </div>
     </div>
   </div>
@@ -64,13 +65,22 @@ Yurt Horizon
     <div class="flex-col-6">
       <div class="padding-100">
         <div class="main-title left">
-          <h2>Explore World <br> Beyond</h2>
-          <p>Consectetur adipisicing elit. Quisquam fugit ducimus, qui molestias.</p>
+          <h2>Our Story</h2>
+          <p>Born from the mountains. Built with love. Guided by purpose.</p>
         </div>
         <div class="row">
-          <div class="col-sm-6">Esse iusto quibusdam quae assumenda dignissimos eligendi magni dolor error sunt corporis laborum maiores. At ad, ratione delectus inventore voluptas cum nulla molestias perferendis iste quis laborum veniam reprehenderit ipsam vitae, corrupti.
-            Cumque enim, unde eveniet.</div>
-          <div class="col-sm-6">Asperiores odit error cupiditate nam aperiam animi laborum aliquid. Doloremque, reiciendis perferendis praesentium necessitatibus quis cupiditate. Laborum dicta, ipsa aliquam fugiat!</div>
+          <div class="col-sm">Yurt Horizon began as a dream shared by two lifelong friends — Azat and Nurbek — who grew up with the rhythm of the mountains in their hearts. One had the vision, the other had the drive, and both were united by a deep love for their land.
+            <br>What started as a simple idea — to show travelers the true Kyrgyzstan — became a mission to create something rare:</div>
+          <br>
+          <div class="col-sm-6">A tour company that feels like family.
+A journey that feels like home.
+An experience that stays with you long after the road ends.
+            <br>Every route we design, every guest we welcome, every story we share — is a reflection of who we are: honest, warm, rooted in tradition, and always striving for excellence.
+</div>
+          <div class="col-sm-6">
+This is not just a business.
+This is our calling.
+And we’re honored to walk this path with you.</div>
         </div>
         <br>
         <a href="" class="btn btn-md btn-primary btn-line">Check All Destinations</a>
@@ -93,7 +103,7 @@ Yurt Horizon
         <div class="col-sm-3 step-module first wp-1 delay-0">
           <div class="index"><span class="icon-island"></span>
           </div>
-          <h4>Holiday Planing</h4>
+          <h4>Holiday Planning</h4>
         </div>
         <div class="col-sm-3 step-module wp-1 delay-1">
           <div class="index"><span class="icon-door-tag"></span>
@@ -103,7 +113,7 @@ Yurt Horizon
         <div class="col-sm-3 step-module wp-1 delay-2">
           <div class="index"><span class="icon-hiking"></span>
           </div>
-          <h4>Tour Package</h4>
+          <h4>Tour Packages</h4>
         </div>
         <div class="col-sm-3 step-module last wp-1 delay-3">
           <div class="index"><span class="icon-plane"></span>
@@ -123,12 +133,16 @@ Yurt Horizon
     <div class="container">
       <div class="line-box">
         <div class="line-title">Mission</div>
-        <h2>Offering The Best for your Holidays</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt ullam laboriosam consequuntur, reiciendis dolores expedita facere inventore, deleniti repellendus molestiae minus impedit incidunt dicta quae magnam, omnis nulla eum fugiat est
-          sequi itaque in natus ratione aperiam? Animi soluta sit aliquid veritatis.</p>
+        <h2>Meaningful Travel, Rooted in Soul</h2>
+        <p>We believe travel should transform — not just transport.
+That’s why we go beyond logistics and create journeys that inspire, connect, and renew.
+
+With Yurt Horizon, you’re not a tourist.
+You’re a storyteller.
+And Kyrgyzstan becomes part of your story.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, consectetur! Tempore iusto cupiditate sapiente hic dolorum.</p>
         <br>
-        <a href="" class="btn btn-primary btn-lg hvr-sweep-to-right">Book Now</a>
+        <a href="{% url 'contact' %}" class="btn btn-primary btn-lg hvr-sweep-to-right">Book Now</a>
       </div>
     </div>
   </div>
@@ -142,81 +156,25 @@ Yurt Horizon
       </div>
       <div class="row">
         <div class="testimonial boxed">
+          {% for i in reviews %}
           <div class="col-sm-4">
             <div>
-              <img src="http://placehold.it/120x120" alt="" class="avatar">
-              <div class="name">Kim L. Burney</div>
-              <div>U.S.A</div>
+              <img src="{{ i.image.url }}" alt="" class="avatar">
+              <div class="name">{{ i.full_name }}</div>
+              <div>{{ i.country }}</div>
               <div class="rating">
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star-empty"></span>
+                {% for j in "12345" %}
+                  {% if j|floatformat:0 <= i.reiting|floatformat:0 %}
+                    <span class="icon-star"></span>
+                  {% else %}
+                    <span class="icon-star-empty"></span>
+                  {% endif %}
+                {% endfor %}
               </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque minus maxime atque ea accusamus, delectus consequatur libero non mollitia fugiat!</p>
+              <p>{{ i.content }}</p>
             </div>
           </div>
-          <div class="col-sm-4">
-            <div>
-              <img src="http://placehold.it/120x120" alt="" class="avatar">
-              <div class="name">Shing Ch'in</div>
-              <div>China</div>
-              <div class="rating">
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star-empty"></span>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque minus maxime atque ea accusamus, delectus consequatur libero non mollitia fugiat!</p>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div>
-              <img src="http://placehold.it/120x120" alt="" class="avatar">
-              <div class="name">Pitez Maltr</div>
-              <div>China</div>
-              <div class="rating">
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star-empty"></span>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque minus maxime atque ea accusamus, delectus consequatur libero non mollitia fugiat!</p>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div>
-              <img src="http://placehold.it/120x120" alt="" class="avatar">
-              <div class="name">Pitez Maltr</div>
-              <div>China</div>
-              <div class="rating">
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star-empty"></span>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque minus maxime atque ea accusamus, delectus consequatur libero non mollitia fugiat!</p>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div>
-              <img src="http://placehold.it/120x120" alt="" class="avatar">
-              <div class="name">Pitez Maltr</div>
-              <div>China</div>
-              <div class="rating">
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star"></span>
-                <span class="icon-star-empty"></span>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque minus maxime atque ea accusamus, delectus consequatur libero non mollitia fugiat!</p>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>

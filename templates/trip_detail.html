@@ -235,18 +235,11 @@ Yurt Horizon
                     <div id="collapse1Two" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1Two">
                       <div class="panel-body">
                         <ul class="clean-ul">
+                          {% for i in not_included %}
                           <li><span class="icon-cross"></span>
-                            <div class="desc">Alcohol or Beverage</div>
+                            <div class="desc">{{ i.title }}</div>
                           </li>
-                          <li><span class="icon-cross"></span>
-                            <div class="desc">Use of Trek Pack</div>
-                          </li>
-                          <li><span class="icon-cross"></span>
-                            <div class="desc">Group medical kit</div>
-                          </li>
-                          <li><span class="icon-cross"></span>
-                            <div class="desc">All major group equipments, etc.</div>
-                          </li>
+                          {% endfor %}
                         </ul>
                       </div>
                     </div>

@@ -3866,6 +3866,7 @@ ul.itenary-steps.base .glyphicon {
     margin: 10px 0 30px;
   }
   .search-bar.bottom {
+    margin-top: 0px;
     position: relative;
     bottom: auto;
   }

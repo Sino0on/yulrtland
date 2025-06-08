@@ -1,3 +1,5 @@
+from pyexpat import features
+
 from django.shortcuts import render
 from django.views import generic
 
@@ -22,6 +24,7 @@ class HomeView(generic.TemplateView):
         context['reviews'] = Review.objects.all()
         context['infoblocks'] = BlockInfo.objects.all()
         return context
+
 
 
 # def trip_detail(request, pk):
@@ -63,7 +66,11 @@ def trip_detail(request, pk):
         messages.success(request, 'Thank you! Your booking has been received.')
         return redirect('trip_detail', pk=trip.pk)
     cimular_trips = Destination.objects.all()[:3]
-    return render(request, 'trip_detail.html', {'trip': trip, 'cimular_trips': cimular_trips, 'best_tours': Destination.objects.all()[:5]})
+
+    included = trip.features.all()
+    not_included = Features.objects.exclude(id__in=included.values_list('id', flat=True))
+
+    return render(request, 'trip_detail.html', {'trip': trip, 'cimular_trips': cimular_trips, 'best_tours': Destination.objects.all()[:5], 'included': included, "not_included": not_included})
 
 
 
@@ -267,7 +274,7 @@ def contact_view(request):
         messages.success(request, 'Thank you! Your message has been sent.')
         return redirect('contact')
 
-    return render(request, 'contact.html')
+    return render(request, 'contact.html', {"about": SiteSetting.objects.all().first()})
 
 
 import requests

@@ -76,7 +76,7 @@
             <li class="dropdown">
               <a href="{% url 'trips' %}">{% trans 'Tours' %}</a>
               <ul class="dropdown-menu">
-                {% for i in best_tours %}
+                {% for i in trips %}
                 <li><a href="{% url 'trip_detail' i.pk %}">{{ i.title }}</a>
                 </li>
                 {% endfor %}
@@ -144,22 +144,21 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-7 col-md-3">
-          <h3>Mold Discover</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, quia, architecto? A, reiciendis eveniet! Esse est eaque adipisci natus rerum laudantium accusamus magni.</p>
+          <h3>Yurt Horizon</h3>
+          <p>{% trans 'Bespoke journeys through wild mountains, nomadic culture, and untamed freedom. Crafted with heart, for travelers who seek the extraordinary.' %}</p>
         </div>
         <div class="col-sm-5 col-md-2">
           <h3>Quick Link</h3>
           <ul>
-            <li>Holiday Package</li>
-            <li>Summer Adventure</li>
-            <li>Bus and Trasnportation</li>
-            <li>Ticket and Hotel Booking</li>
-            <li>Trek and Hikings</li>
+            <li><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+            <li><a href="{% url 'trips' %}">{% trans 'All tours' %}</a></li>
+            <li><a href="{% url 'news' %}">{% trans 'Blog' %}</a></li>
+            <li><a href="{% url 'contact' %}">{% trans 'Contact' %}</a></li>
           </ul>
         </div>
         <div class="col-sm-7 col-md-4">
-          <h3>Newsletter Signup</h3>
-          <p>Subscribe to our weekly newsletter to get news and update</p>
+          <h3>{% trans 'Stay in touch' %}</h3>
+          <p>{% trans 'Get inspiring travels stories, new tours, and exlusive offers.' %}</p>
           <br>
 
           <form method="post" action="{% url 'subscribe_newsletter' %}">
@@ -184,8 +183,8 @@
         <div class="col-sm-5 col-md-2">
           <h3>Contact Info</h3>
           <ul>
-            <li>Mold Discover</li>
-            <li>info@moldthemes.com</li>
+            <li>Yurt Horizon</li>
+            <li>yurthorizon@gmail.com</li>
           </ul>
           <div class="clearfix">
             <div class="social-icon-list">
@@ -194,7 +193,7 @@
                   <a href="https://twitter.com/moldthemes" class="icon-twitter"></a>
                 </li>
                 <li>
-                  <a href="mailto:info@moldthemes.com" class="icon-mail"></a>
+                  <a href="mailto:yurthorizon@gmail.com" class="icon-mail"></a>
                 </li>
               </ul>
             </div>
@@ -202,7 +201,7 @@
         </div>
       </div>
     </div>
-    <div class="copy"><span>&copy;</span> Copyright Mold Discover, 2017</div>
+    <div class="copy"><span>&copy;</span> Copyright YurtHorizon, 2025</div>
   </footer>
 
   <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>

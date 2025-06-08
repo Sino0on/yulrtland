@@ -47,7 +47,7 @@ transparent
   <section style="    padding-top: 70px; padding-bottom: 0px;">
     <div class="main-title">
       <h2>{% trans 'Explore Kyrgyzstan' %}</h2>
-      {% trans '<p>Where mountains meet tradition, and every path tells a story.</p><br><p>Nestled between the mighty Tien Shan and Pamir ranges, Kyrgyzstan is one of the most mountainous countries on Earth — over 90% of its land is highlands. But it’s not just the views that leave you breathless — it’s the way of life.</p><p> Here, ancient nomadic traditions still shape daily rhythms. Horses roam free. Yurts stand proud in high pastures. And every moment feels grounded — real, unfiltered, and full of soul.</p> <p>Far from the rush of modern life, Kyrgyzstan invites you into something deeper. A slower pace. A wilder beauty. A culture that lives from the heart.</p> <p>If you’re ready to step off the beaten path and into something true — Kyrgyzstan is calling.</p>'|safe %}
+      {% trans '<p>Where mountains meet tradition, and every path tells a story.</p><br><p>Tucked between the Tien Shan and Pamir ranges, Kyrgyzstan is one of the world’s most mountainous lands. But it’s not just the peaks — it’s the feeling.</p><p>Here, nomadic rhythms still guide the day.</p><p>Horses roam free. Yurts stand in quiet pride.</p><p>And life flows slowly, deeply, and close to the earth.</p><p>This is a place untouched by rush.</p><p>Where beauty is raw, hospitality runs deep, and the soul can breathe.</p>'|safe %}
     </div>
 
     <div class="container">
@@ -69,8 +69,8 @@ transparent
 
     <section class="showcase" style="background: url('assets/img/worldmap.png') no-repeat center; background-size: cover; padding-top: 20px;">
     <div class="main-title">
-      <h2>Our Top Destination</h2>
-      <p>Consectetur adipisicing elit. Quisquam fugit ducimus, qui molestias.</p>
+      <h2>Journeys Crafted for the Soul</h2>
+      <p>Dive into our most beloved tours — from alpine lakes to nomadic valleys. Each route is designed to reveal the raw beauty and warm soul of Kyrgyzstan. Your journey starts here.</p>
     </div>
     <div class="container">
 
@@ -127,33 +127,26 @@ transparent
 
 
 <div class="flex-row bg-base">
-    <div class="flex-col-6 cover-bg-img" style="background-image: url('{% static 'assets/img/bg3.png' %}');"></div>
+    <div class="flex-col-6 cover-bg-img" style="background-image: url('{% static 'assets/img/bg3.jpg' %}');"></div>
     <div class="flex-col-6">
       <div class="padding-100">
         <div class="main-title left">
           <h2>Explore World <br> Beyond</h2>
-          <p>Consectetur adipisicing elit. Quisquam fugit ducimus, qui molestias.</p>
+          <p>Where wild nature meets timeless tradition</p>
         </div>
         <div class="row">
-          <div class="col-sm-6">Esse iusto quibusdam quae assumenda dignissimos eligendi magni dolor error sunt corporis laborum maiores. At ad, ratione delectus inventore voluptas cum nulla molestias perferendis iste quis laborum veniam reprehenderit ipsam vitae, corrupti.
-            Cumque enim, unde eveniet.</div>
-          <div class="col-sm-6">Asperiores odit error cupiditate nam aperiam animi laborum aliquid. Doloremque, reiciendis perferendis praesentium necessitatibus quis cupiditate. Laborum dicta, ipsa aliquam fugiat!</div>
+          <div class="col-sm-6">Step into Kyrgyzstan — a land where snow-capped peaks kiss the sky, and every sunrise begins with the scent of mountain air. Here, ancient nomads still ride free across emerald valleys, and yurt camps glow under a billion stars.</div>
+          <div class="col-sm-6">More than just a destination, this is a journey into the soul of Central Asia.
+Feel the silence of alpine lakes. Taste food cooked over fire. Ride where no roads go.
+Whether you're seeking peace or awe — you’ll find both here.</div>
         </div>
         <br>
-        <a href="" class="btn btn-md btn-primary btn-line">Check All Destinations</a>
+        <a href="{% url 'trips' %}" class="btn btn-md btn-primary btn-line">Check All Destinations</a>
       </div>
     </div>
   </div>
 
-  <div class="banner base">
-    <div class="container">
-      <div class="line-box">
-        <div class="line-title">Lorem ipsum dolor sit</div>
-        <h2>Great Places, Great Holiday</h2>
-        <a href="" class="btn btn-primary btn-lg hvr-sweep-to-right">Book Now</a>
-      </div>
-    </div>
-  </div>
+
 <section>
     <div class="main-title">
       <h1>Our reviews</h1>
@@ -180,8 +173,65 @@ transparent
     </div>
   </section>
 <div class="container">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="contact-page-2">
 
-</div>
+        <div class="feature-box">
+          <div class="text-center">
+            <div class="circle-icon"><span class="icon-locate"></span>
+            </div>
+            <div class="contact-desc">
+              <h4>Bishkek, Chuy, Kyrgyzstan</h4>
+              <h4>+996 502 888 001</h4>
+              <h4>yurthorizon@gmail.com</h4>
+            </div>
+          </div>
+
+          <br>
+          <hr>
+          <br>
+
+          <form method="post" action="{% url 'contact' %}">
+            {% csrf_token %}
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert alert-success">{{ message }}</div>
+              {% endfor %}
+            {% endif %}
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Message</label>
+                  <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 text-center">
+                <button type="submit" class="btn btn-primary hvr-sweep-to-right">Submit</button>
+              </div>
+            </div>
+          </form>
+
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
 <!--  <div class="counter-div base boxed">-->
 <!--    <div class="clearfix">-->
 <!--      <div class="col-sm-6 col-md-3 light">-->
