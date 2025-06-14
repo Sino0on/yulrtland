@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% block meta %}
+<meta name="description" content="{{ trip.title }}" />
+<meta name="keywords" content="nomadic tour, Kyrgyzstan, yurt camp, horse riding, eagle hunting, nomad life, Central Asia travel, cultural tours" />
+
+{% endblock %}
 {% block title %}
-Yurt Horizon
+{{ trip.title }}
 {% endblock %}
 {% load static %}
 {% block content %}

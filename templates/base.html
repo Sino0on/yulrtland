@@ -7,8 +7,16 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  {% block meta %}
+
+  {% endblock %}
+  <meta name="author" content="Yurt Horizon" />
+  <meta property="og:title" content="Yurt Horizon – Authentic Kyrgyzstan Tours & Nomadic Adventures" />
+  <meta property="og:description" content="Unforgettable journeys through Kyrgyzstan's wild nature, rich culture and nomadic traditions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yurthorizon.com/" />
+  <meta property="og:image" content="https://yurthorizon.com/static/assets/img/preview.png" />
+
   <title>{% block title %}{% endblock %}</title>
   <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}" />
   {% block css %}
