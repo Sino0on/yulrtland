@@ -25,7 +25,7 @@ class Features(models.Model):
 
 class Destination(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True, blank=True, verbose_name="Слаг")
+    slug = models.SlugField(blank=True, verbose_name="Слаг", null=True)
     oblasti = models.CharField(max_length=255)
     days = models.CharField(max_length=255)
     nights = models.CharField(max_length=255)
