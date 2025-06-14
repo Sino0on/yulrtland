@@ -8,11 +8,11 @@ handler404 = 'main.views.custom_404'
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
-    path('trips/<int:pk>', trip_detail, name='trip_detail'),
+    path('trips/<slug:slug>', trip_detail, name='trip_detail'),
     path('trips', TripListView.as_view(), name='trips'),
     path('about-us', AboutUsView.as_view(), name='about-us'),
     path('news', NewsListView.as_view(), name='news'),
-    path('news/<int:pk>', NewsDetailView.as_view(), name='news_detail'),
+    path('news/<slug:slug>', NewsDetailView.as_view(), name='news_detail'),
     path('reviews', ReviewsView.as_view(), name='reviews'),
     path('faq', FAQView.as_view(), name='faq'),
     path('contact', contact_view, name='contact'),
@@ -22,4 +22,17 @@ urlpatterns = [
     path('subscribe/', subscribe_newsletter, name='subscribe_newsletter'),
     path('icons/', icons, name='icons'),
 
+]
+
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import DestinationSitemap, StaticViewSitemap, NewsSitemap
+
+sitemaps = {
+    'destinations': DestinationSitemap,
+    'news': NewsSitemap,
+    'static': StaticViewSitemap,
+}
+
+urlpatterns += [
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
