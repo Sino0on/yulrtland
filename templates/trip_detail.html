@@ -481,7 +481,7 @@
             <div class="item-desc">
               <div class="item-info">
                 <span class="icon-hard"></span>
-                <h4 class="title"><a href="">{{ i.title }}</a></h4>
+                <h4 class="title"><a href="{% url 'trip_detail' i.slug %}">{{ i.title }}</a></h4>
               </div>
 
               <div class="sub-title">
@@ -496,7 +496,7 @@
                 </div>
                 <div class="right">
                   <div class="price">{{ i.price }}</div>
-                  <a href="#" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
+                  <a href="{% url 'trip_detail' i.slug %}" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
                 </div>
               </div>
             </div>

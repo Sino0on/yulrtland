@@ -142,7 +142,7 @@ Our Tours – Explore Kyrgyzstan with Yurt Horizon
               <div class="item-grid">
                 <div class="item-img" style="background-image: url('{{ i.image.url }}'); background-size: cover; background-position: center;">
                   <div class="item-overlay">
-                    <a href="{% url 'trip_detail' i.pk %}"><span class="icon-binocular"></span></a>
+                    <a href="{% url 'trip_detail' i.slug %}"><span class="icon-binocular"></span></a>
                   </div>
                 </div>
                 <div class="item-desc">
@@ -171,7 +171,7 @@ Our Tours – Explore Kyrgyzstan with Yurt Horizon
                     </div>
                     <div class="right">
                       <div class="price">{{ i.price }}</div>
-                      <a href="{% url 'trip_detail' i.pk %}" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
+                      <a href="{% url 'trip_detail' i.slug %}" class="btn btn-primary hvr-sweep-to-right">Book Now</a>
                     </div>
                   </div>
                 </div>
