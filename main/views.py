@@ -33,8 +33,8 @@ class HomeView(generic.TemplateView):
 #     return render(request, 'trip_detail.html', {'trip': destination, 'cimular_trips': cimular_trips, 'best_tours': Destination.objects.all()[:5]})
 
 
-def trip_detail(request, pk):
-    trip = get_object_or_404(Destination, pk=pk)
+def trip_detail(request, slug):
+    trip = get_object_or_404(Destination, slug=slug)
 
     if request.method == 'POST':
         name = request.POST.get('name')
