@@ -56,7 +56,7 @@ class Destination(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('trip_detail', kwargs={'pk': self.pk, 'slug': self.slug})
+        return reverse('trip_detail', kwargs={'slug': self.slug})
 
     class Meta:
         ordering = ['-created_at']
@@ -178,7 +178,7 @@ class News(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('news_detail', kwargs={'pk': self.pk, 'slug': self.slug})
+        return reverse('news_detail', kwargs={'slug': self.slug})
 
     class Meta:
         ordering = ['-created_at']
