@@ -40,7 +40,7 @@ transparent
       </div>
     </div>
     <div class="col-sm-2 d-flex align-items-end">
-      <a href="{% url 'quiz_start' 1 %}" class="btn btn-search btn-primary hvr-sweep-to-right w-100">
+      <a href="{% url 'quiz_start' 3 %}" class="btn btn-search btn-primary hvr-sweep-to-right w-100">
         {% trans 'Start Quiz' %}
       </a>
     </div>
@@ -98,7 +98,7 @@ transparent
                 {% else %}
                 <span class="icon-extreme"></span>
                 {% endif %}
-                <h4 class="title"><a href="{% url 'trip_detail' i.pk %}">{{ i.title }}</a></h4>
+                <h4 class="title"><a href="{% url 'trip_detail' i.slug %}">{{ i.title }}</a></h4>
               </div>
 
               <div class="sub-title">
