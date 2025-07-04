@@ -44,6 +44,7 @@ class Destination(models.Model):
 
     image = models.FileField(upload_to='destinations/')
     map = models.FileField(upload_to='maps/', blank=True, null=True)
+    map_iframe = models.TextField(blank=True, null=True)
     features = models.ManyToManyField(Features)
     created_at = models.DateTimeField()
 

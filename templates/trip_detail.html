@@ -375,7 +375,11 @@
         <h3>Our Adventure Map</h3>
       </div>
       <div class="map" style="width: 100%; border:0" height="450">
+        {% if trip.map_iframe %}
+        {{ trip.map_iframe }}
+        {% else %}
         <img style="width: 100%; border:0"  src="{{ trip.map.url }}" alt="">
+        {% endif %}
       </div>
 
 
