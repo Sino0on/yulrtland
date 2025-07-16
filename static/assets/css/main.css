@@ -1367,13 +1367,7 @@ hr.dark {
   display: none;
 }
 
-/* 📱 Адаптация для мобильных */
-@media (max-width: 768px) {
-  .main-video {
-    height: 100vh;
-    max-height: none;
-  }
-}
+
 
 .main-image-txt,
 .carousel-caption {
