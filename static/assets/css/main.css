@@ -1430,8 +1430,8 @@ hr.dark {
     height: 420px;
   }
   .main-video video {
-    height: 500px;
-    width: auto;
+    height: 100vh;
+    max-height: none;
   }
   .main-image-txt,
   .carousel-caption {
@@ -1694,8 +1694,8 @@ hr.dark {
     height: 420px;
   }
   .main-video video {
-    height: 500px;
-    width: auto;
+    height: 100vh;
+    max-height: none;
   }
   .main-image-txt,
   .carousel-caption {
