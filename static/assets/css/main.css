@@ -1328,47 +1328,35 @@ hr.dark {
 }
 .main-video {
   max-height: 800px;
-  margin: 0;
-  padding-top: 0;
+  margin: 0px;
+  padding-top: 0px;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-
 .main-video.with-overlay:before {
   content: '';
   height: 100%;
   width: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
+  background-image: -webkit-linear-gradient(top, rgba(29, 48, 16, 0.8) 0%, #000 100%);
+  background-image: -o-linear-gradient(top, rgba(29, 48, 16, 0.8) 0%, #000 100%);
   background-image: linear-gradient(to bottom, rgba(29, 48, 16, 0.8) 0%, #000 100%);
   background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc1d3010', endColorstr='#ff000000', GradientType=0);
   opacity: 0.4;
   z-index: 9;
 }
-
 .main-video video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: cover;
-  z-index: 1;
+  width: 100%;
 }
-
 .main-video img {
   display: none;
 }
-
-
-
 .main-image-txt,
 .carousel-caption {
   width: 800px;
@@ -1430,8 +1418,8 @@ hr.dark {
     height: 420px;
   }
   .main-video video {
-    height: 100vh;
-    max-height: none;
+    height: 500px;
+    width: auto;
   }
   .main-image-txt,
   .carousel-caption {
@@ -1694,8 +1682,8 @@ hr.dark {
     height: 420px;
   }
   .main-video video {
-    height: 100vh;
-    max-height: none;
+    height: 500px;
+    width: auto;
   }
   .main-image-txt,
   .carousel-caption {
