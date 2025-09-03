@@ -378,7 +378,9 @@
         {% if trip.map_iframe %}
         {{ trip.map_iframe|safe }}
         {% else %}
+		  {% if trip.map %}
         <img style="width: 100%; border:0"  src="{{ trip.map.url }}" alt="">
+		  {% endif %}
         {% endif %}
       </div>
 
