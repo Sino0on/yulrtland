@@ -85,7 +85,7 @@
               <a href="{% url 'trips' %}">{% trans 'Tours' %}</a>
               <ul class="dropdown-menu">
                 {% for i in trips %}
-                <li><a href="{% url 'trip_detail' i.pk %}">{{ i.title }}</a>
+                <li><a href="{% url 'trip_detail' i.slug %}">{{ i.title }}</a>
                 </li>
                 {% endfor %}
               </ul>

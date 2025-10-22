@@ -35,14 +35,14 @@ Yurt Horizon – Authentic Kyrgyzstan Tours & Nomadic Adventures
           <article class="post-list full-img">
             <div class="post-img" style="background-image: url('{{ i.image.url }}')">
               <div class="item-overlay">
-                <a href="{% url 'news_detail' i.pk %}"><span class="icon-binocular"></span></a>
+                <a href="{% url 'news_detail' i.slug %}"><span class="icon-binocular"></span></a>
               </div>
             </div>
             <div class="post-summary">
               <header>
                 <h4 class="post-title">
 
-									<a href="{% url 'news_detail' i.pk %}">{{ i.title }}</a>
+									<a href="{% url 'news_detail' i.slug %}">{{ i.title }}</a>
 
 								</h4>
                 <p class="byline author vcard">
@@ -62,7 +62,7 @@ Yurt Horizon – Authentic Kyrgyzstan Tours & Nomadic Adventures
                 {{ i.mini_description }}
               </div>
 
-              <a href="{% url 'news_detail' i.pk %}" class="btn btn-primary hvr-sweep-to-right">Read More</a>
+              <a href="{% url 'news_detail' i.slug %}" class="btn btn-primary hvr-sweep-to-right">Read More</a>
             </div>
           </article>
           {% endfor %}
@@ -136,12 +136,14 @@ Yurt Horizon – Authentic Kyrgyzstan Tours & Nomadic Adventures
                     <img src="{{ i.image.url }}" class="media-object" alt="">
                   </div>
                   <div class="post-summary">
-                    <p>{{ i.title }}</p>
+                    <a href="{% url 'news_detail' i.slug %}">
+                      <p>{{ i.title }}</p>
+                    </a>
                     <div class="byline">
                       <span class="updated">{{ i.created_at }}</span>
                       <span class="dot">·</span>
                       <span class="italic">By</span>&nbsp;
-                      <a href="{% url 'news_detail' i.pk %}" rel="author" class="fn">{{ i.author }}</a>
+                      <a href="{% url 'news_detail' i.slug %}" rel="author" class="fn">{{ i.author }}</a>
                     </div>
                   </div>
                 </div>

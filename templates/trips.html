@@ -156,7 +156,7 @@ Our Tours – Explore Kyrgyzstan with Yurt Horizon
                     {% else %}
                     <span class="icon-extreme"></span>
                     {% endif %}
-                    <h4 class="title"><a href="{% url 'trip_detail' i.pk %}">{{ i.title }}</a></h4>
+                    <h4 class="title"><a href="{% url 'trip_detail' i.slug %}">{{ i.title }}</a></h4>
                   </div>
 
                   <div class="sub-title">
